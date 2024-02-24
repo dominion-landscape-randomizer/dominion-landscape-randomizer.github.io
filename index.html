@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dominion Landscape Randomizer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="type-select">
+            <label><input type="number", value='1', min='0', id = 'Event_count'> Events</label>
+            <label><input type="checkbox", id = 'Event_check'> Surprise me!</label><br>
+            <label><input type="number", value='1', min='0', id = 'Landmark_count'> Landmarks</label>
+            <label><input type="checkbox", id = 'Landmark_check'> Surprise me!</label><br>
+            <label><input type="number", value='0', min='0', id = 'Project_count'> Projects</label>
+            <label><input type="checkbox", id = 'Project_check'> Surprise me!</label><br>
+            <label><input type="number", value='0', min='0', id = 'Way_count'> Ways</label>
+            <label><input type="checkbox", id = 'Way_check'> Surprise me!</label><br>
+            <label><input type="number", value='0', min='0', id = 'Trait_count'> Traits</label>
+            <label><input type="checkbox", id = 'Trait_check'> Surprise me!</label>
+        </div>
+        <div class="component-checkboxes">
+            <label><input type="checkbox", id = 'debt_check', checked = true> Debt Tokens (Empires)</label><br>
+            <label><input type="checkbox", id = 'victory_check', checked = true> Victory Tokens</label><br>
+            <label><input type="checkbox", id = 'adventures_check', checked = true> Adventures Tokens</label><br>
+            <label><input type="checkbox", id = 'exile_check', checked = true> Exile Mat (Menagerie)</label><br>
+            <label><input type="checkbox", id = 'loot_check'> Loot Cards (Plunder)</label><br>
+            <label><input type="checkbox", id = 'coffer_check', checked = true> Coffers & Villagers Tokens (Renaissance)</label><br>
+            <label><input type="checkbox", id = 'horse_check'> Horse Cards (Menagerie)</label>
+        </div>
+        <label><input type="number", value='2', min='0', id = 'total_count'> Total Cards</label><br>
+        <button id="submit_button" style="margin-bottom: 50px;">Randomize</button>
+        <div id="card_div">
+            <table id = "card_tbl">
+            </table>
+
+        </div>
+    </div>
+    <script src="lists.js"></script>
+    <script src="landscape.js"></script>
+</body>
+</html>

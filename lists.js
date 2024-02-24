@@ -1,0 +1,20 @@
+//Constant arrays containing the unique parts of the image URL from the DominionStrategyWiki
+
+const waysDefault = ["c/cb/Way_of_the_Butterfly","3/3c/Way_of_the_Chameleon","4/4c/Way_of_the_Frog","5/5a/Way_of_the_Goat","1/13/Way_of_the_Horse","d/d9/Way_of_the_Mole","1/13/Way_of_the_Monkey","2/29/Way_of_the_Mouse","b/bf/Way_of_the_Mule","8/86/Way_of_the_Otter","2/2f/Way_of_the_Owl","a/a4/Way_of_the_Ox","b/bf/Way_of_the_Pig","9/92/Way_of_the_Rat","b/b3/Way_of_the_Seal","3/3c/Way_of_the_Sheep","8/82/Way_of_the_Squirrel","d/d1/Way_of_the_Turtle"]
+const waysExile = ["e/ec/Way_of_the_Worm","8/8c/Way_of_the_Camel"]
+const projectsDefault = ["8/8d/Barracks","0/09/Canal","3/3d/Capitalism","c/c5/Cathedral","a/a2/Citadel","1/11/City_Gate","1/15/Crop_Rotation","7/77/Fair","2/29/Fleet","f/f3/Innovation","e/e3/Piazza","f/f2/Road_Network","8/84/Sewers","a/a2/Silos","0/07/Star_Chart"]
+const projectsCoffers = ["d/d9/Academy","8/8f/Exploration","7/71/Guildhall","b/bc/Pageant","0/07/Sinister_Plot"]
+const landmarksDefault = ["4/42/Bandit_Fort","e/ee/Fountain","4/4b/Keep","b/b2/Museum","c/c6/Obelisk","8/80/Orchard","c/c4/Palace","2/29/Tower","7/7a/Triumphal_Arch","6/67/Wall","c/ca/Wolf_Den"]
+const landmarksVictory = ["3/3f/Aqueduct","3/36/Arena","5/54/Basilica","a/a9/Baths","b/b0/Battlefield","e/e3/Colonnade","d/dd/Defiled_Shrine","c/c0/Labyrinth","7/71/Tomb"]
+const landmarksDebtVictory = ["d/d5/Mountain_Pass"]
+const eventsDefault = ["3/37/Advance","7/79/Alliance","a/ac/Alms","2/2e/Avoid","e/e4/Banquet","9/90/Bonfire","0/04/Bury","4/4d/Commerce","1/16/Delay","7/7e/Deliver","9/9d/Delve","4/45/Desperation","7/7b/Enhance","e/e3/Expedition","e/ec/Gamble","3/31/Journey","c/c1/Launch",
+"d/dd/Maelstrom","c/cf/March","5/52/Mirror","3/34/Mission","6/6a/Populate","1/19/Prepare","9/9f/Pursue","3/36/Quest","9/9f/Reap","2/2e/Save","b/b2/Scouting_Party","8/8e/Scrounge","c/cb/Seize_the_Day","e/ee/Summon","e/e4/Toil","9/9d/Trade","b/be/Travelling_Fair","f/f8/Windfall"]
+const eventsDebtVictory = ["c/c9/Triumph","b/b6/Wedding"]
+const eventsDebt = ["b/be/Annex","4/42/Donate","f/fb/Rush","9/9d/Tax"]
+const eventsVictory = ["0/08/Conquest","c/c9/Dominate","2/28/Pathfinding","d/d1/Ritual","6/66/Salt_the_Earth"]
+const eventsAdventures = ["d/df/Ball","8/88/Borrow","d/d9/Ferry","0/02/Inheritance","4/4b/Lost_Arts","e/ee/Pilgrimage","2/2c/Plan","8/89/Raid","d/df/Seaway","9/99/Training"]
+const eventsExile = ["9/91/Banish","c/c3/Enclave","e/e3/Invest","7/76/Transport"]
+const eventsHorses = ["f/fb/Bargain","b/b7/Demand","b/bb/Ride","d/d9/Stampede"]
+const eventsLoot = ["7/70/Foray","8/84/Invasion","f/f3/Looting","b/b5/Peril","f/ff/Prosper"]
+const traitsDefault = ["3/3d/Cheap","e/e6/Fated","6/63/Fawning","8/81/Friendly","1/1b/Hasty","0/01/Inherited","b/b3/Inspiring","6/67/Nearby","3/36/Patient","f/ff/Pious","0/0f/Reckless","a/a7/Rich","a/a5/Shy","0/08/Tireless"]
+const traitsLoot = ["a/af/Cursed"]
