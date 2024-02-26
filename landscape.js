@@ -114,8 +114,8 @@ function randomCards(cards, n){
 
 function toggleNumber(type){
     let counter = document.getElementById(type+'_count')
-    if (counter.disabled) counter.disabled = false
-    else counter.disabled = true
+    if (this.checked) counter.disabled = true
+    else counter.disabled = false
 }
 
 document.addEventListener('DOMContentLoaded', function() {
