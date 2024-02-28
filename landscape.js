@@ -19,7 +19,7 @@ function randomize(){
     let sum = 0
     i = 0
     while (i < types.length){
-        if (document.getElementById(types[i]+"_count").disabled){
+        if (document.getElementById(types[i]+"_check").checked){
             surprise = surprise += types[i]
             i++
             continue
