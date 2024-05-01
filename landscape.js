@@ -19,7 +19,7 @@ function randomize(){
     let sum = 0
     i = 0
     while (i < types.length){
-        if (document.getElementById(types[i]+"_check").checked){
+        if (document.getElementById(types[i]+"_count").disabled){
             surprise = surprise += types[i]
             i++
             continue
@@ -101,12 +101,12 @@ function makeList(type,n){
 //include MATH
 //takes in an array of cards, and an integer. Randomly selects n (or all, if n is greater than total length) cards from the arrays and adds them to the table
 function randomCards(cards, n){
-    let i = cards.length
+    let i = cards.length    
     if (n > cards.length) n = cards.length
     while (i > cards.length-n){
     //add randomly selected card to table. Replace that card in the array with the end card. Shrink array by 1
     index = Math.floor(Math.random() * i)
-        addRow(cards[index])
+        addRow(cards[index].getURL)
         cards[index] = cards[i]
         i--
     }
@@ -114,9 +114,8 @@ function randomCards(cards, n){
 
 function toggleNumber(type){
     let counter = document.getElementById(type+'_count')
-    let check = document.getElementById(type+'_check')
-    if (check.checked){counter.disabled = true}
-    else counter.disabled = false
+    if (counter.disabled) counter.disabled = false
+    else counter.disabled = true
 }
 
 document.addEventListener('DOMContentLoaded', function() {
