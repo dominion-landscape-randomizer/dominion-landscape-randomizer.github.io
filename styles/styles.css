@@ -47,10 +47,12 @@ a:focus {
 }
 
 p {
-    line-height: 0;
+    line-height: 1.2;
+    margin-bottom: 0%;
   }
 
 button {
+    margin-top: 0%;
     height: 30px;
     color: black;
     background-color: lightgray;
@@ -58,6 +60,7 @@ button {
 }
 
 input {
+    margin-top: 0%;
     height: 3%;
     padding-bottom: 7px;
     padding-top: 7px;
