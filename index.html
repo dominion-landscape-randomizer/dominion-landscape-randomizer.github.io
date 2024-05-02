@@ -11,6 +11,12 @@
 
 <body>
     <div class="container">
+        <div id="card_div">
+            <table id = "card_tbl">
+            </table>
+        </div>
+        Total Cards <button id="Total_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='2', min='0', id = 'Total_count'></label><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+        <button id="submit_button" style="margin-bottom: 10px;">Randomize</button>
         <div class="type-select">
             <p><b>Events</b></p><br>
             Minimum: <button id="Event_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Event_min'></label><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
@@ -30,21 +36,13 @@
 
         </div>
         <div class="component-checkboxes">
-            <label><input type="checkbox", id = 'debt_check', checked = true> Debt Tokens (Empires)</label><br>
+            <label><input type="checkbox", id = 'debt_check', checked = true> Debt Tokens (Empires & Rising Sun)</label><br>
             <label><input type="checkbox", id = 'victory_check', checked = true> Victory Tokens</label><br>
             <label><input type="checkbox", id = 'adventures_check', checked = true> Adventures Tokens</label><br>
             <label><input type="checkbox", id = 'exile_check', checked = true> Exile Mat (Menagerie)</label><br>
             <label><input type="checkbox", id = 'loot_check'> Loot Cards (Plunder)</label><br>
             <label><input type="checkbox", id = 'coffer_check', checked = true> Coffers & Villagers Tokens (Renaissance)</label><br>
             <label><input type="checkbox", id = 'horse_check'> Horse Cards (Menagerie)</label>
-        </div>
-        <br>
-        Total Cards <button id="Total_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='2', min='0', id = 'Total_count'></label><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-        <button id="submit_button" style="margin-bottom: 10px;">Randomize</button>
-        <div id="card_div">
-            <table id = "card_tbl">
-            </table>
-
         </div>
     </div>
     <script src="lists.js"></script>
