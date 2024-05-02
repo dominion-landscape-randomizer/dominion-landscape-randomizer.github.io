@@ -12,16 +12,12 @@
 <body>
     <div class="container">
         <div class="type-select">
-            <label><input type="number", value='1', min='0', id = 'Event_count'> Events</label>
-            <label><input type="checkbox", id = 'Event_check'> Surprise me!</label><br>
-            <label><input type="number", value='1', min='0', id = 'Landmark_count'> Landmarks</label>
-            <label><input type="checkbox", id = 'Landmark_check'> Surprise me!</label><br>
-            <label><input type="number", value='0', min='0', id = 'Project_count'> Projects</label>
-            <label><input type="checkbox", id = 'Project_check'> Surprise me!</label><br>
-            <label><input type="number", value='0', min='0', id = 'Way_count'> Ways</label>
-            <label><input type="checkbox", id = 'Way_check'> Surprise me!</label><br>
-            <label><input type="number", value='0', min='0', id = 'Trait_count'> Traits</label>
-            <label><input type="checkbox", id = 'Trait_check'> Surprise me!</label>
+            Events - Minimum: <button id="Event_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Event_min'></label><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button> Maximum: <button id="Event_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Event_max'></label><button id="Event_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+            Landmarks - Minimum: <button id="Landmark_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Landmark_min'></label><button id="Landmark_min_up_button" style="margin-bottom: 10px;">⬆️</button> Maximum: <button id="Landmark_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Landmark_max'></label><button id="Landmark_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+            Projects - Minimum: <button id="Project_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Project_min'></label><button id="Project_min_up_button" style="margin-bottom: 10px;">⬆️</button> Maximum: <button id="Project_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Project_max'></label><button id="Project_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+            Ways - Minimum: <button id="Way_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Way_min'></label><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button> Maximum: <button id="Way_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Way_max'></label><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+            Traits - Minimum: <button id="Trait_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Trait_min'></label><button id="Trait_min_up_button" style="margin-bottom: 10px;">⬆️</button> Maximum: <button id="Trait_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Trait_max'></label><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+
         </div>
         <div class="component-checkboxes">
             <label><input type="checkbox", id = 'debt_check', checked = true> Debt Tokens (Empires)</label><br>
@@ -32,8 +28,9 @@
             <label><input type="checkbox", id = 'coffer_check', checked = true> Coffers & Villagers Tokens (Renaissance)</label><br>
             <label><input type="checkbox", id = 'horse_check'> Horse Cards (Menagerie)</label>
         </div>
-        <label><input type="number", value='2', min='0', id = 'total_count'> Total Cards</label><br>
-        <button id="submit_button" style="margin-bottom: 50px;">Randomize</button>
+        <br>
+        Total Cards <button id="Total_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='2', min='0', id = 'Total_count'></label><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button><br>
+        <button id="submit_button" style="margin-bottom: 10px;">Randomize</button>
         <div id="card_div">
             <table id = "card_tbl">
             </table>

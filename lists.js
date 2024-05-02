@@ -1,24 +1,26 @@
 const cardType = Object.freeze({
-    EVENT: Symbol('event'),
-    LANDMARK: Symbol('landmark'),
-    PROJECT: Symbol('project'),
-    WAY: Symbol('way'),
-    TRAIT: Symbol('trait'),
-    PROPHESY: Symbol('prophesy')
+    EVENT: String('Event'),
+    LANDMARK: String('Landmark'),
+    PROJECT: String('Project'),
+    WAY: String('Way'),
+    TRAIT: String('Trait'),
+    PROPHESY: String('Prophesy')
 })
 
 class cardShapedThing{
     constructor(url, type){
         this.URL = url
-        this.type = type
+        this.TYPE = type
     }
     getURL(){
-        return URL
+        return this.URL
     }
     getType(){
-        return type
+        return this.TYPE
     }
 }
+
+const types = ['Event','Landmark','Project','Way','Trait']
 
 //Constant arrays containing objects of each card
 //image URL from the DominionStrategyWiki
