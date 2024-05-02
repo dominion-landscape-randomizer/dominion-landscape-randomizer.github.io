@@ -17,22 +17,33 @@ Trait: 0}
 //the list of all cards
 var cards = []
 
-function addRow(imageURL) {
-    table = document.getElementById('card_tbl')
-    let contentrow = document.createElement('tr')
-    contentrow.innerHTML = `<img src="https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg"></img>`       
-    table.appendChild(contentrow)
+function addRow(imageURL, table, index) {
+    //creates a row if it does not already exist
+    if (table.rows.length <= index){
+        let contentrow = document.createElement('tr')
+        let imageElement = document.createElement('img')
+        contentrow.appendChild(imageElement)
+        imageElement.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`
+        table.appendChild(contentrow)        
+    }
+    //overwrites a row if it already exists
+    else{
+        //preload the image before changing
+        const preloadedImage = new Image()
+        preloadedImage.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`
+        preloadedImage.onload = function(){
+            var image = table.rows[index].children[0]
+            image.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`          
+            }
+        //change
+        console.log("Row index = " + index)
+        }
 }
 
 function randomize(){
-    //clear the table
-    let table = document.getElementById('card_tbl')
-    let i = table.rows.length
-    while (i > 0){
-        table.deleteRow(0)
-        i--
-    }
+    //empty the cards list and hide the trait selector
     cards = []
+    hideTrait()
 
     let included = ""
     i = 0
@@ -137,6 +148,7 @@ function randomCards(n){
 
     i = cards.length - 1 
     if (n > cards.length) n = cards.length
+    cardsToAdd = []
 
     //do until n cards have been chosen
     while (chosen < n && i >= 0){
@@ -155,21 +167,53 @@ function randomCards(n){
         }
         if (required[cards[index].getType()] > 0) required[cards[index].getType()]--
         if (allowed[cards[index].getType()] > 0) allowed[cards[index].getType()]--
-        addRow(cards[index].getURL())
+        //display the trait selector if the card is a trait or Obelisk
+        if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "c/c6/Obelisk")){
+            showTrait()
+        }
+        cardsToAdd.push(cards[index].getURL())
         chosen++
         cards[index] = cards[i]
         i--
+    }
+
+    //replaces old table with new
+    let table = document.getElementById('card_tbl')
+    let tableSize = table.rows.length
+
+    //adds all chosen cards to the table
+    i = 0
+    while (i < chosen){
+        console.log("Adding row")
+        addRow(cardsToAdd[i], table, i)
+        i++
+    }
+    //if more cards are in the table than were chosen
+    if (tableSize > chosen)
+    while (i < tableSize){
+        console.log("Deleting row")
+        table.deleteRow(i)
+        i++
     }
 }
 
 function connectButtons(){
     document.getElementById("Total_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Total_count").value)
-        document.getElementById("Total_count").value = Math.max(n+1, 0)
+        document.getElementById("Total_count").value = n+1
     }) 
     document.getElementById("Total_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Total_count").value)
         document.getElementById("Total_count").value = Math.max(n-1, 0)
+    }) 
+
+    document.getElementById("Trait_down_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Trait_count").value)
+        document.getElementById("Trait_count").value = Math.max(n-1, 0)
+    }) 
+    document.getElementById("Trait_up_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Trait_count").value)
+        document.getElementById("Trait_count").value = n+1
     }) 
 
     document.getElementById("Event_min_down_button").addEventListener('click', function() {
@@ -178,7 +222,7 @@ function connectButtons(){
     })
     document.getElementById("Event_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_min").value)
-        document.getElementById("Event_min").value = Math.max(n+1, 0)
+        document.getElementById("Event_min").value = n+1
     }) 
     document.getElementById("Event_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_max").value)
@@ -186,7 +230,7 @@ function connectButtons(){
     })
     document.getElementById("Event_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_max").value)
-        document.getElementById("Event_max").value = Math.max(n+1, 0)
+        document.getElementById("Event_max").value = n+1
     }) 
     
     document.getElementById("Landmark_min_down_button").addEventListener('click', function() {
@@ -195,7 +239,7 @@ function connectButtons(){
     })
     document.getElementById("Landmark_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_min").value)
-        document.getElementById("Landmark_min").value = Math.max(n+1, 0)
+        document.getElementById("Landmark_min").value = n+1
     }) 
     document.getElementById("Landmark_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_max").value)
@@ -203,7 +247,7 @@ function connectButtons(){
     })
     document.getElementById("Landmark_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_max").value)
-        document.getElementById("Landmark_max").value = Math.max(n+1, 0)
+        document.getElementById("Landmark_max").value = n+1
     }) 
 
     document.getElementById("Project_min_down_button").addEventListener('click', function() {
@@ -212,7 +256,7 @@ function connectButtons(){
     })
     document.getElementById("Project_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_min").value)
-        document.getElementById("Project_min").value = Math.max(n+1, 0)
+        document.getElementById("Project_min").value = n+1
     }) 
     document.getElementById("Project_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_max").value)
@@ -220,7 +264,7 @@ function connectButtons(){
     })
     document.getElementById("Project_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_max").value)
-        document.getElementById("Project_max").value = Math.max(n+1, 0)
+        document.getElementById("Project_max").value = n+1
     }) 
 
     document.getElementById("Way_min_down_button").addEventListener('click', function() {
@@ -229,7 +273,7 @@ function connectButtons(){
     })
     document.getElementById("Way_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_min").value)
-        document.getElementById("Way_min").value = Math.max(n+1, 0)
+        document.getElementById("Way_min").value = n+1
     }) 
     document.getElementById("Way_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_max").value)
@@ -237,7 +281,7 @@ function connectButtons(){
     })
     document.getElementById("Way_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_max").value)
-        document.getElementById("Way_max").value = Math.max(n+1, 0)
+        document.getElementById("Way_max").value = n+1
     }) 
 
     document.getElementById("Trait_min_down_button").addEventListener('click', function() {
@@ -246,7 +290,7 @@ function connectButtons(){
     })
     document.getElementById("Trait_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_min").value)
-        document.getElementById("Trait_min").value = Math.max(n+1, 0)
+        document.getElementById("Trait_min").value = n+1
     }) 
     document.getElementById("Trait_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_max").value)
@@ -254,11 +298,14 @@ function connectButtons(){
     })
     document.getElementById("Trait_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_max").value)
-        document.getElementById("Trait_max").value = Math.max(n+1, 0)
+        document.getElementById("Trait_max").value = n+1
     }) 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('submit_button').addEventListener('click', randomize)
-    connectButtons();
+    document.getElementById("Trait_Randomize").addEventListener('click', selectCard) 
+    document.getElementById("Trait_?").addEventListener('click', traitQuestion) 
+    hideTrait()
+    connectButtons()
   })
