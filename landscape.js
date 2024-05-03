@@ -125,6 +125,12 @@ function makeList(type,n){
             cards = cards.concat(eventsExile)
         }
     }
+    if (type.includes('Ally')){
+        cards = cards.concat(alliesDefault)
+        if (document.getElementById("liaison_check").getAttribute("checked")){
+            cards = cards.concat(alliesLiaison)
+        }
+    }
 
     if (cards.length > 0) randomCards(n)
 }
@@ -300,12 +306,39 @@ function connectButtons(){
         let n = parseInt(document.getElementById("Trait_max").value)
         document.getElementById("Trait_max").value = n+1
     }) 
+
+    document.getElementById("Ally_min_down_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Ally_min").value)
+        document.getElementById("Ally_min").value = Math.max(n-1, 0)
+    })
+    document.getElementById("Ally_min_up_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Ally_min").value)
+        document.getElementById("Ally_min").value = n+1
+    }) 
+    document.getElementById("Ally_max_down_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Ally_max").value)
+        document.getElementById("Ally_max").value = Math.max(n-1, 0)
+    })
+    document.getElementById("Ally_max_up_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Ally_max").value)
+        document.getElementById("Ally_max").value = n+1
+    }) 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('submit_button').addEventListener('click', randomize)
     document.getElementById("Trait_Randomize").addEventListener('click', selectCard) 
-    document.getElementById("Trait_?").addEventListener('click', traitQuestion) 
+    document.getElementById("Trait_?").addEventListener('click', function(){
+        alert(`This number input is number of cards that can be affected by your Trait (or Obelisk).\n
+    Traits can only go on Action and Treasure Kingdom cards (eg. not Silver, not Gardens, and not Ruins). If you pulled 2 Traits, they cannot both go on the same card.\n
+    Obelisk can only go on Action Supply piles (any pile that has the type "Action", including the Ruins pile)\n
+    Choose the number of cards in your setup that are eligible to get your Trait/Obelisk. Then use the randomly generated number to choose the card with that index (based on however you're sorting them on the table)`)
+    }) 
+    document.getElementById("Liaison_?").addEventListener('click', function(){
+        alert(`Officially, you only put an Ally out if you have a Liaison in the Kingdom. However, most Allies can be played as long as each player starts with 5 Favor Tokens (Importer's setup)\n
+        Two Allies specifically are only activated "when you play a Liaison". If this box is not checked, neither of those will come up.\n
+        If you do not own the expansion Allies, you can either keep this box unchecked and have each player start with 5 Favor Tokens, or you can check this box and use your blank cards as a Liaison pile (eg. Underling)`)
+    }) 
     hideTrait()
     connectButtons()
   })

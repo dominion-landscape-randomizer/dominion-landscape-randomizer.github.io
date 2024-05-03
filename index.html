@@ -15,39 +15,52 @@
             <table id = "card_tbl">
             </table>
 <div id = "trait_div">
-<button id="Trait_?"style="margin-bottom: 10px;">?</button> Number of Cards Eligible for Trait <button id="Trait_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='10', min='0', id = 'Trait_count'></label><button id="Trait_up_button" style="margin-bottom: 10px;">⬆️</button><br><button id="Trait_Randomize"style="margin-bottom: 10px;">Select Card</button><br>
+Number of Cards Eligible for Trait <button id="Trait_?"style="margin-bottom: 10px;">⍰</button> 
+<div class = "button-group"><button id="Trait_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='10', min='0', id = 'Trait_count'><button id="Trait_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+<span class="visible-button"><button id="Trait_Randomize"style="margin-bottom: 10px;">Select Card</button></span><br>
 <textarea id="Trait_index" rows="1" cols="2" readonly placeholder=""></textarea>
 
 </div>
         </div>
-        Total Cards <button id="Total_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='2', min='0', id = 'Total_count'></label><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-        <button id="submit_button" style="margin-bottom: 10px;">Randomize</button>
+        Total Cards <div class = "button-group"><button id="Total_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='2', min='0', id = 'Total_count'><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+        <span class="visible-button"><button id="submit_button" style="margin-bottom: 10px;">Randomize</button></span>
         <div class="type-select">
-            <p><b>Events</b></p><br>
-            Minimum: <button id="Event_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Event_min'></label><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            Maximum: <button id="Event_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Event_max'></label><button id="Event_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            <p><b>Landmarks</b></p><br>
-            Minimum: <button id="Landmark_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Landmark_min'></label><button id="Landmark_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            Maximum: <button id="Landmark_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Landmark_max'></label><button id="Landmark_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            <p><b>Projects</b></p><br>
-            Minimum: <button id="Project_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Project_min'></label><button id="Project_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            Maximum: <button id="Project_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='1', min='0', id = 'Project_max'></label><button id="Project_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            <p><b>Ways</b></p><br>
-            Minimum: <button id="Way_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Way_min'></label><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            Maximum: <button id="Way_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Way_max'></label><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            <p><b>Traits</b></p><br>
-            Minimum: <button id="Trait_min_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Trait_min'></label><button id="Trait_min_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-            Maximum: <button id="Trait_max_down_button" style="margin-bottom: 10px;">⬇️</button><label><input type="number", value='0', min='0', id = 'Trait_max'></label><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button><br>
-
+            <table>
+            <tr>
+            <td><p><b>Events</b></p>
+            Minimum: <div class = "button-group"><button id="Event_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='1', min='0', id = 'Event_min'><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Event_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='1', min='0', id = 'Event_max'><button id="Event_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            <td><p><b>Landmarks</b></p>
+            Minimum: <div class = "button-group"><button id="Landmark_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Landmark_min'><button id="Landmark_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Landmark_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='1', min='0', id = 'Landmark_max'><button id="Landmark_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            </tr>
+            <tr>
+            <td><p><b>Projects</b></p>
+            Minimum: <div class = "button-group"><button id="Project_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Project_min'><button id="Project_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Project_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='1', min='0', id = 'Project_max'><button id="Project_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            <td><p><b>Ways</b></p>
+            Minimum: <div class = "button-group"><button id="Way_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Way_min'><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Way_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Way_max'><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            </tr>
+            <td><p><b>Ally</b></p>
+            Minimum: <div class = "button-group"><button id="Ally_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Ally_min'><button id="Ally_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Ally_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Ally_max'><button id="Ally_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            <td><p><b>Traits</b></p>
+            Minimum: <div class = "button-group"><button id="Trait_min_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Trait_min'><button id="Trait_min_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
+            Maximum: <div class = "button-group"><button id="Trait_max_down_button" style="margin-bottom: 10px;">⬇️</button><input type="number", value='0', min='0', id = 'Trait_max'><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button></div></td>
+            </td></tr>    
+            </table>
         </div>
+        <br>
         <div class="component-checkboxes">
-            <label><input type="checkbox", id = 'debt_check', checked = true> Debt Tokens (Empires & Rising Sun)</label><br>
-            <label><input type="checkbox", id = 'victory_check', checked = true> Victory Tokens</label><br>
-            <label><input type="checkbox", id = 'adventures_check', checked = true> Adventures Tokens</label><br>
-            <label><input type="checkbox", id = 'exile_check', checked = true> Exile Mat (Menagerie)</label><br>
-            <label><input type="checkbox", id = 'loot_check'> Loot Cards (Plunder)</label><br>
-            <label><input type="checkbox", id = 'coffer_check', checked = true> Coffers & Villagers Tokens (Renaissance)</label><br>
-            <label><input type="checkbox", id = 'horse_check'> Horse Cards (Menagerie)</label>
+            <input type="checkbox", id = 'victory_check', checked = true></input> Victory Tokens<br>
+            <input type="checkbox", id = 'adventures_check', checked = true></input> Adventures Tokens<br>
+            <input type="checkbox", id = 'debt_check', checked = true></input> Debt Tokens (Empires & Rising Sun)<br>
+            <input type="checkbox", id = 'coffer_check', checked = true></input> Coffers & Villagers Tokens (Renaissance)<br>
+            <input type="checkbox", id = 'exile_check', checked = true></input> Exile Mat (Menagerie)<br>
+            <input type="checkbox", id = 'horse_check'></input> Horse Cards (Menagerie)<br>
+            <input type="checkbox", id = 'liaison_check'></input> Liaison Cards (Allies) <span class = "inline-button"><button id="Liaison_?"style="margin-bottom: 10px;">⍰</button></span><br>
+            <input type="checkbox", id = 'loot_check'></input> Loot Cards (Plunder)<br>
         </div>
     </div>
     <script src="lists.js"></script>

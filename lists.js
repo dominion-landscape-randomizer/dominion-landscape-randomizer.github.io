@@ -3,6 +3,7 @@ const cardType = Object.freeze({
     LANDMARK: String('Landmark'),
     PROJECT: String('Project'),
     WAY: String('Way'),
+    ALLY: String('Ally'),
     TRAIT: String('Trait'),
     PROPHESY: String('Prophesy')
 })
@@ -20,7 +21,7 @@ class cardShapedThing{
     }
 }
 
-const types = ['Event','Landmark','Project','Way','Trait']
+const types = ['Event','Landmark','Project','Way','Ally','Trait']
 
 //Constant arrays containing objects of each card
 //image URL from the DominionStrategyWiki
@@ -41,5 +42,7 @@ const eventsAdventures = [new cardShapedThing("d/df/Ball", cardType.EVENT), new 
 const eventsExile = [new cardShapedThing("9/91/Banish", cardType.EVENT), new cardShapedThing("c/c3/Enclave", cardType.EVENT), new cardShapedThing("e/e3/Invest", cardType.EVENT), new cardShapedThing("7/76/Transport", cardType.EVENT)]
 const eventsHorses = [new cardShapedThing("f/fb/Bargain", cardType.EVENT), new cardShapedThing("b/b7/Demand", cardType.EVENT), new cardShapedThing("b/bb/Ride", cardType.EVENT), new cardShapedThing("d/d9/Stampede", cardType.EVENT)]
 const eventsLoot = [new cardShapedThing("7/70/Foray", cardType.EVENT), new cardShapedThing("8/84/Invasion", cardType.EVENT), new cardShapedThing("f/f3/Looting", cardType.EVENT), new cardShapedThing("b/b5/Peril", cardType.EVENT), new cardShapedThing("f/ff/Prosper", cardType.EVENT)]
+const alliesDefault = [new cardShapedThing("0/05/Architects%27_Guild", cardType.ALLY),new cardShapedThing("1/1b/Band_of_Nomads", cardType.ALLY),new cardShapedThing("e/ec/Cave_Dwellers", cardType.ALLY),new cardShapedThing("a/ab/City-state", cardType.ALLY),new cardShapedThing("0/04/Coastal_Haven", cardType.ALLY),new cardShapedThing("0/0d/Crafters%27_Guild", cardType.ALLY),new cardShapedThing("f/f7/Desert_Guides", cardType.ALLY),new cardShapedThing("d/d2/Family_of_Inventors", cardType.ALLY),new cardShapedThing("9/9c/Fellowship_of_Scribes", cardType.ALLY),new cardShapedThing("7/7d/Forest_Dwellers", cardType.ALLY),new cardShapedThing("7/79/Gang_of_Pickpockets", cardType.ALLY),new cardShapedThing("9/9d/Island_Folk", cardType.ALLY),new cardShapedThing("0/03/League_of_Bankers", cardType.ALLY),new cardShapedThing("f/f2/Market_Towns", cardType.ALLY),new cardShapedThing("b/b8/Mountain_Folk", cardType.ALLY),new cardShapedThing("6/60/Order_of_Astrologers", cardType.ALLY),new cardShapedThing("1/1b/Order_of_Masons", cardType.ALLY),new cardShapedThing("b/b9/Peaceful_Cult", cardType.ALLY),new cardShapedThing("a/a4/Plateau_Shepherds", cardType.ALLY),new cardShapedThing("5/5b/Trappers%27_Lodge", cardType.ALLY),new cardShapedThing("e/e6/Woodworkers%27_Guild", cardType.ALLY)]
+const alliesLiaison = [new cardShapedThing("5/58/Circle_of_Witches", cardType.ALLY),new cardShapedThing("5/50/League_of_Shopkeepers", cardType.ALLY)]
 const traitsDefault = [new cardShapedThing("3/3d/Cheap", cardType.TRAIT), new cardShapedThing("e/e6/Fated", cardType.TRAIT), new cardShapedThing("6/63/Fawning", cardType.TRAIT), new cardShapedThing("8/81/Friendly", cardType.TRAIT), new cardShapedThing("1/1b/Hasty", cardType.TRAIT), new cardShapedThing("0/01/Inherited", cardType.TRAIT), new cardShapedThing("b/b3/Inspiring", cardType.TRAIT), new cardShapedThing("6/67/Nearby", cardType.TRAIT), new cardShapedThing("3/36/Patient", cardType.TRAIT), new cardShapedThing("f/ff/Pious", cardType.TRAIT), new cardShapedThing("0/0f/Reckless", cardType.TRAIT), new cardShapedThing("a/a7/Rich", cardType.TRAIT), new cardShapedThing("a/a5/Shy", cardType.TRAIT), new cardShapedThing("0/08/Tireless", cardType.TRAIT)]
 const traitsLoot = [new cardShapedThing("a/af/Cursed", cardType.TRAIT)]
