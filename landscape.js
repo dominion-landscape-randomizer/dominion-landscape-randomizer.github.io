@@ -16,24 +16,26 @@ Trait: 0}
 
 //the list of all cards
 var cards = []
+//the list of cards on the table
+var cardsToAdd = []
 
-function addRow(imageURL, table, index) {
+function addRow(imageURL, table, index, width) {
     //creates a row if it does not already exist
     if (table.rows.length <= index){
         let contentrow = document.createElement('tr')
         let imageElement = document.createElement('img')
         contentrow.appendChild(imageElement)
-        imageElement.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`
+        imageElement.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`
         table.appendChild(contentrow)        
     }
     //overwrites a row if it already exists
     else{
         //preload the image before changing
         const preloadedImage = new Image()
-        preloadedImage.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`
+        preloadedImage.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`
         preloadedImage.onload = function(){
             var image = table.rows[index].children[0]
-            image.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/320px-${imageURL.slice(5)}.jpg`          
+            image.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`          
             }
         //change
         console.log("Row index = " + index)
@@ -41,9 +43,11 @@ function addRow(imageURL, table, index) {
 }
 
 function randomize(){
-    //empty the cards list and hide the trait selector
+    //empty the cards list and hide other elements
     cards = []
     hideTrait()
+    hideMouse()
+    //hideBoon()
 
     let included = ""
     i = 0
@@ -76,59 +80,59 @@ function randomize(){
 function makeList(type,n){
     if (type.includes('Way')){
         cards = cards.concat(waysDefault)
-        if (document.getElementById("exile_check").getAttribute("checked")){
+        if (document.getElementById("exile_check").checked){
             cards = cards.concat(waysExile)
         }
     }
     if (type.includes('Trait')){
         cards = cards.concat(traitsDefault)
-        if (document.getElementById("loot_check").getAttribute("checked")){
+        if (document.getElementById("loot_check").checked){
             cards = cards.concat(traitsLoot)
         }
     }
     if (type.includes('Project')){
         cards = cards.concat(projectsDefault)
-        if (document.getElementById("coffer_check").getAttribute("checked")){
+        if (document.getElementById("coffer_check").checked){
             cards = cards.concat(projectsCoffers)
         }
     }
     if (type.includes('Landmark')){
         cards = cards.concat(landmarksDefault)
-        if (document.getElementById("victory_check").getAttribute("checked")){
+        if (document.getElementById("victory_check").checked){
             cards = cards.concat(landmarksVictory)
-            if (document.getElementById("debt_check").getAttribute("checked")){
+            if (document.getElementById("debt_check").checked){
                 cards = cards.concat(landmarksDebtVictory)
             }
         }
     }
     if (type.includes('Event')){
         cards = cards.concat(eventsDefault)
-        if (document.getElementById("debt_check").getAttribute("checked")){
+        if (document.getElementById("debt_check").checked){
             cards = cards.concat(eventsDebt)
-            if (document.getElementById("victory_check").getAttribute("checked")){
+            if (document.getElementById("victory_check").checked){
                 cards = cards.concat(eventsDebtVictory)
             }
         }
-        if (document.getElementById("horse_check").getAttribute("checked")){
+        if (document.getElementById("horse_check").checked){
             cards = cards.concat(eventsHorses)
         }
-        if (document.getElementById("adventures_check").getAttribute("checked")){
+        if (document.getElementById("adventures_check").checked){
             cards = cards.concat(eventsAdventures)
         }
-        if (document.getElementById("loot_check").getAttribute("checked")){
+        if (document.getElementById("loot_check").checked){
             cards = cards.concat(eventsLoot)
         }
-        if (document.getElementById("victory_check").getAttribute("checked")){
+        if (document.getElementById("victory_check").checked){
             cards = cards.concat(eventsVictory)
         }
-        if (document.getElementById("exile_check").getAttribute("checked")){
+        if (document.getElementById("exile_check").checked){
             cards = cards.concat(eventsExile)
         }
     }
     if (type.includes('Ally')){
-        cards = cards.concat(alliesDefault)
-        if (document.getElementById("liaison_check").getAttribute("checked")){
-            cards = cards.concat(alliesLiaison)
+        cards = cards.concat(allyDefault)
+        if (document.getElementById("liaison_check").checked){
+            cards = cards.concat(allyLiaison)
         }
     }
 
@@ -158,7 +162,8 @@ function randomCards(n){
 
     //do until n cards have been chosen
     while (chosen < n && i >= 0){
-        //add randomly selected card to table. Replace that card in the array with the end card. Shrink array by 1
+        //add randomly selected card to table. Replace that card in the array with the end card.
+        //Shrink array by 1
         index = Math.floor(Math.random() * i)
         //if card is not required, check if there is space for it
         if (required[cards[index].getType()] === 0){
@@ -177,7 +182,11 @@ function randomCards(n){
         if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "c/c6/Obelisk")){
             showTrait()
         }
-        cardsToAdd.push(cards[index].getURL())
+        //displays the mouse randomizer if the card is Way of the Mouse
+        else if (cards[index].getURL() === "2/29/Way_of_the_Mouse"){
+            showMouse()
+        }
+        cardsToAdd.push(cards[index])
         chosen++
         cards[index] = cards[i]
         i--
@@ -191,7 +200,7 @@ function randomCards(n){
     i = 0
     while (i < chosen){
         console.log("Adding row")
-        addRow(cardsToAdd[i], table, i)
+        addRow(cardsToAdd[i].getURL(), table, i, 320)
         i++
     }
     //if more cards are in the table than were chosen
@@ -339,6 +348,12 @@ document.addEventListener('DOMContentLoaded', function() {
         Two Allies specifically are only activated "when you play a Liaison". If this box is not checked, neither of those will come up.\n
         If you do not own the expansion Allies, you can either keep this box unchecked and have each player start with 5 Favor Tokens, or you can check this box and use your blank cards as a Liaison pile (eg. Underling)`)
     }) 
+    document.getElementById("Expansion_Select").addEventListener('click', selectAll) 
+    document.getElementById("Mouse_Randomize").addEventListener('click', makeActionList) 
+    document.getElementById("Mouse_Add").addEventListener('click', addMouse) 
     hideTrait()
+    hideMouse()
+    hideBoon()
     connectButtons()
+    connectNocturneButtons()
   })

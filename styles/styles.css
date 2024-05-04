@@ -133,5 +133,108 @@ textarea {
 .visible-button{
     background-color: white;
     outline:white;
-    border:black;
+    border:black;    
+}
+
+label[for="base_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 14px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/b/b0/Dominion_icon.png/20px-Dominion_icon.png");
+}
+label[for="intrigue_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/c/cf/Intrigue_icon.png/20px-Intrigue_icon.png");
+}
+label[for="seaside_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 26px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/c/c5/Seaside_icon.png/20px-Seaside_icon.png");
+}
+label[for="alchemy_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 34px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/6/6a/Alchemy_icon.png/20px-Alchemy_icon.png");
+}
+label[for="prosperity_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/f/fb/Prosperity_icon.png/20px-Prosperity_icon.png");
+}
+label[for="cornucopia_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/20/Cornucopia_icon.png/20px-Cornucopia_icon.png");
+}
+label[for="hinterlands_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 16px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/28/Hinterlands_icon.png/20px-Hinterlands_icon.png");
+}
+label[for="dark_ages_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/1/1b/Dark_Ages_icon.png/20px-Dark_Ages_icon.png");
+}
+label[for="guilds_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/3/36/Guilds_icon.png/20px-Guilds_icon.png");
+}
+label[for="adventures_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/5/5e/Adventures_icon.png/20px-Adventures_icon.png");
+}
+label[for="empires_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/2a/Empires_icon.png/20px-Empires_icon.png");
+}
+label[for="nocturne_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/a/aa/Nocturne_icon.png/20px-Nocturne_icon.png");
+}
+label[for="renaissance_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/4/4c/Renaissance_icon.png/20px-Renaissance_icon.png");
+}
+label[for="menagerie_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/d/d4/Menagerie_%28expansion%29_icon.png/20px-Menagerie_%28expansion%29_icon.png");
+}
+label[for="allies_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/3/3d/Allies_icon.png/20px-Allies_icon.png");
+}
+label[for="plunder_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/b/b8/Plunder_%28expansion%29_icon.png/20px-Plunder_%28expansion%29_icon.png");
+}
+label[for="promo_check"] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/a/a0/Promo_icon.png/16px-Promo_icon.png");
 }
