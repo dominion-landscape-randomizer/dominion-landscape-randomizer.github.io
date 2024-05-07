@@ -83,6 +83,3 @@ const allies = ["c/c3/Merchant_Camp","9/90/Sentinel","f/fd/Herb_Gatherer","d/d5/
 const plunder = ["2/2a/Grotto","d/d1/Shaman","8/80/Secluded_Shrine","6/6b/Siren","6/66/Stowaway","c/cc/Taskmaster"]
 const plunderLoot = ["0/01/Search"]
 const promo = ["f/fa/Black_Market", "d/df/Church"]
-
-//boons and hexes (for Nocturne cards)
-const hexStates = ["9/9b/Deluded","8/8c/Envious", "6/6b/Miserable","0/0d/Twice_Miserable"]

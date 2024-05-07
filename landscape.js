@@ -20,8 +20,8 @@ var cards = []
 var cardsToAdd = []
 
 function addRow(imageURL, table, index, width) {
-    //creates a row if it does not already exist
-    if (table.rows.length <= index){
+    //creates a row if it does not already exist, or index is specifically the end
+    if (table.rows.length <= index || index === -1){
         let contentrow = document.createElement('tr')
         let imageElement = document.createElement('img')
         contentrow.appendChild(imageElement)
@@ -37,8 +37,6 @@ function addRow(imageURL, table, index, width) {
             var image = table.rows[index].children[0]
             image.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`          
             }
-        //change
-        console.log("Row index = " + index)
         }
 }
 
@@ -199,14 +197,12 @@ function randomCards(n){
     //adds all chosen cards to the table
     i = 0
     while (i < chosen){
-        console.log("Adding row")
         addRow(cardsToAdd[i].getURL(), table, i, 320)
         i++
     }
     //if more cards are in the table than were chosen
     if (tableSize > chosen)
     while (i < tableSize){
-        console.log("Deleting row")
         table.deleteRow(i)
         i++
     }

@@ -149,10 +149,15 @@ function makeActionList() {
 function isLiaison(imageURL) {
     //check if chosen card is a liaison
     for (i in alliesLiaisons) {
-        console.log(imageURL)
         if (imageURL === alliesLiaisons[i]) {
             //add message
-            document.getElementById("rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.`
+            if (i === 3){ //Ally is Student
+                document.getElementById("rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.
+                You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside Student`
+            }
+            else{
+                document.getElementById("rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.`
+            }
 
             //check if any ally is already in the table
             for (c in cardsToAdd) {
@@ -165,8 +170,6 @@ function isLiaison(imageURL) {
             let index = Math.floor(Math.random() * cards.length)
             //adds it to the cards already added
             cardsToAdd.push(cards[index])
-            console.log("CardsToAdd after pushing:")
-            console.log(cardsToAdd)
             mouseAlly = true;
             addRow(cards[index].getURL(), document.getElementById('card_tbl'), cardsToAdd.length, 320)
             return;
@@ -174,6 +177,9 @@ function isLiaison(imageURL) {
     }
     //only reached if the card is not a Liaison
     removemouseAlly()
+    if (imageURL === "c/c3/Merchant_Camp" || imageURL === "c/c9/Tent"){
+        document.getElementById("rules_clarification").innerHTML = "You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside card"
+    }
 }
 
 function removemouseAlly() {
@@ -223,6 +229,12 @@ function chooseAction() {
     if (document.getElementById("adventures_check").checked) {
         if (imageURL === "6/60/Page" || imageURL === "7/70/Peasant") {
             document.getElementById("rules_clarification").innerHTML = "As Way of the Mouse never puts the Traveller into play, it is never discarded from play, and thus cannot be exchanged"
+        }
+    }
+
+    if (document.getElementById("1E_check").checked) {
+        if (imageURL === "f/fb/Embargo") {
+            document.getElementById("rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Embargo, therefore it cannot distribute tokens."
         }
     }
         

@@ -22,10 +22,12 @@ function showBoon() {
 }
 
 function isNocturne(imageURL) {
-    console.log(imageURL)
     hex = false;
     switch (imageURL) {
         case "f/f0/Druid":
+            threeButton = document.getElementById("3_Boons");
+            threeButton.innerHTML = "3 New Boons"
+            threeButton.style.display = "inline"
             showBoon()
             receiveBoons(3, boonsDeck, 0)
             break;
@@ -38,6 +40,7 @@ function isNocturne(imageURL) {
             break;
         case "d/d2/Fool":
             threeButton = document.getElementById("3_Boons");
+            threeButton.innerHTML = "Receive 3 Boons"
             threeButton.style.display = "inline"
             boonButton = document.getElementById("1_Boon");
             boonButton.style.display = "inline"
@@ -48,13 +51,10 @@ function isNocturne(imageURL) {
             break;
         case "2/23/Leprechaun":
             hex = true
-            document.getElementById("boon_count").innerHTML = "Hexes left in deck: 12"
             hexButton = document.getElementById("1_Hex");
             hexButton.style.display = "inline"
             showBoon()
-            for (i in hexStates){
-                addRow(hexStates[i], document.getElementById("state_tbl"), i, 320)
-            }
+            document.getElementById("boon_count").innerHTML = "Hexes left in deck: 12"
             addRow("6/68/Wish", document.getElementById("heirloom_tbl"), 0, 200)
             break;
         case "f/f7/Pixie":
@@ -71,7 +71,6 @@ function isNocturne(imageURL) {
 }
 
 function shuffleBoons(deck){
-    console.log("Shuffling")
     let i = deck.length - 1
     let shuffled = deck
     while (i > 0){
@@ -86,21 +85,41 @@ function shuffleBoons(deck){
     return shuffled
 }
 
-//if the deck is empty, reshuffle the deck. Otherwise, 
+//if the deck is empty, reshuffle the deck. Otherwise, add one boon/hex at index i. 
 function receiveBoons(n, deck, i){
-    console.log("Receiving")
     if (numBoons === 0) numBoons = 12
     if (numBoons === 12){
         deck = shuffleBoons(deck)
     }
     numBoons--
-    console.log("boons left: " + numBoons)
 
-    if (hex) document.getElementById("boon_count").innerHTML = "Hexes left in deck: " + numBoons
-    else document.getElementById("boon_count").innerHTML = "Boons left in deck: " + numBoons
-    
-    console.log(deck)
+    if (hex){
+        document.getElementById("boon_count").innerHTML = "Hexes left in deck: " + numBoons
+        let state_table = document.getElementById("state_tbl");
+        //display state relevant to Hex that was just received.
+        //Will stay out unless a new action card is chosen
+        if (state_table.rows.length < 4){
+            if (deck[numBoons] == "3/31/Misery") {
+                addRow("6/6b/Miserable", state_table, -1, 320)
+                addRow("0/0d/Twice_Miserable", state_table, -1, 320)
+            }
+            else if (deck[numBoons] == "e/ec/Delusion") addRow("9/9b/Deluded", state_table, -1, 320)
+            else if (deck[numBoons] == "0/08/Envy") addRow("8/8c/Envious", state_table, -1, 320)    
+        }
+    }
+    else{
+        document.getElementById("boon_count").innerHTML = "Boons left in deck: " + numBoons
+        //display Will-o'-Wisp if relevant Boon revealed. Will stay out unless a new action card is chosen
+        //(So that players can see the instructions for the rest of the game)
+        if (deck[numBoons] === "c/ce/The_Swamp%27s_Gift"){
+            addRow("4/4f/Will-o'-Wisp", document.getElementById("heirloom_tbl"), 1, 200)
+        }
+    }
+
     addRow(deck[numBoons], document.getElementById("boon_tbl"), i, 320)
+
+
+
     if (n > 1) receiveBoons(n-1, deck, i+1)
 }
 
