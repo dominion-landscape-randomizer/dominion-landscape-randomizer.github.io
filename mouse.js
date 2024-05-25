@@ -243,7 +243,7 @@ function chooseAction() {
             document.getElementById("rules_clarification").innerHTML = "As there is no Farmer's Market pile, it only give you +Buy."
         }
         else if (imageURL === "4/4e/Encampment") {
-            document.getElementById("rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so it is not set aside and returned to its pile."
+            document.getElementById("rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so nothing is set aside and returned to its pile."
         }
     }
 }
