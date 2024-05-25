@@ -334,9 +334,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('about_Button').addEventListener('click', function() {
         window.location.href = 'https://dominion-landscape-randomizer.github.io/about.html';
       });
-      document.getElementById('main_Button').addEventListener('click', function() {
-        window.location.href = 'https://dominion-landscape-randomizer.github.io';
-      });
     document.getElementById('submit_button').addEventListener('click', randomize)
     document.getElementById("Trait_Randomize").addEventListener('click', selectCard) 
     document.getElementById("Trait_?").addEventListener('click', function(){
