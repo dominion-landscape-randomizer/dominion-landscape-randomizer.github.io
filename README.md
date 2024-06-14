@@ -1,4 +1,4 @@
-#dominion-landscape-randomizer
+# dominion-landscape-randomizer
 
 This webpage is a way to add landscape card-shaped things to physical Dominion games. They are not sorted by Expansion, but by Type (Event, Landmark, etc.) and what Components (Victory Tokens, Debt etc.) are needed.
 It randomly selects a specified numebr of landscape cards based on selected parameters. 
