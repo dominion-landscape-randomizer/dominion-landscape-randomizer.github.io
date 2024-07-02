@@ -22,7 +22,6 @@ class cardShapedThing{
 }
 
 const types = ['Event','Landmark','Project','Way','Ally','Trait']
-const mouseChecks = ['base_check', 'intrigue_check', 'seaside_check', 'alchemy_check', 'prosperity_check', 'cornucopia_check', 'guilds_check', 'hinterlands_check', 'dark_ages_check', 'adventures_check', 'empires_check', 'nocturne_check', 'renaissance_check', 'menagerie_check', 'allies_check', 'plunder_check', 'promo_check', '1E_check']
 const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check']
 const counters = ['Total_count', 'Event_min', 'Event_max', 'Landmark_min', 'Landmark_max', 'Project_min', 'Project_max', 'Way_min', 'Way_max', 'Trait_min', 'Trait_max', 'Ally_min', 'Ally_max']
 

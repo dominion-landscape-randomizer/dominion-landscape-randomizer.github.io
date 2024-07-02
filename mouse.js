@@ -1,4 +1,4 @@
-var selected = true //if all expansion check boxes are checked
+var selected = false //if all expansion check boxes are checked
 var actionCards = []
 var mouseAlly = false; //true if an ally was added due to Mouse, and was not there originally
 
@@ -33,18 +33,27 @@ function showMouse() {
 
 //reads local storage relevant to the Mouse section, and intializes their on-click event listener  s
 function readMouseStorage(){
-    for (item in mouseChecks){ 
-        document.getElementById(mouseChecks[item]).addEventListener('click', function() {
-            localStorage.setItem(mouseChecks[item], this.checked)
+    for (i in expansions){ 
+        document.getElementById((expansions[i] + "_check")).addEventListener('click', function() {
+            localStorage.setItem(this.id, this.checked)
         })
 
-        if (localStorage.getItem(mouseChecks[item]) === "true"){
-            document.getElementById(mouseChecks[item]).checked = true
+        if (localStorage.getItem(expansions[i] + "_check") === "true"){
+            document.getElementById(expansions[i] + "_check").checked = true
         }
         else{
-            document.getElementById(mouseChecks[item]).checked = false
-            console.log(false)
+            document.getElementById(expansions[i] + "_check").checked = false
         }
+    }
+    
+    document.getElementById(("1E_check")).addEventListener('click', function() {
+        localStorage.setItem(this.id, this.checked)
+    })
+    if (localStorage.getItem("1E_check") === "true"){
+        document.getElementById("1E_check").checked = true
+    }
+    else{
+        document.getElementById("1E_check").checked = false
     }
 }
 
@@ -52,6 +61,7 @@ function selectAll() {
     if (selected) {
         for (i in expansions) {
             document.getElementById(expansions[i] + "_check").checked = false
+            localStorage.setItem(expansions[i] + "_check", false)
         }
         selected = false
         document.getElementById("Expansion_Select").innerHTML = "Select All Expansions"
@@ -59,6 +69,7 @@ function selectAll() {
     else {
         for (i in expansions) {
             document.getElementById(expansions[i] + "_check").checked = true
+            localStorage.setItem(expansions[i] + "_check", true)
         }
         selected = true
         document.getElementById("Expansion_Select").innerHTML = "Deselect All Expansions"

@@ -364,15 +364,14 @@ function readStorage(){
         document.getElementById(counters[item]).value = localStorage.getItem(counters[item])
     }
     for (item in checks){
-        document.getElementById(mouseChecks[item]).addEventListener('click', function() {
-            localStorage.setItem(mouseChecks[item], this.checked)
+        document.getElementById((String)(checks[item])).addEventListener('click', function() {
+            localStorage.setItem(this.id, this.checked)
         })
         if (localStorage.getItem(checks[item]) === "true"){
             document.getElementById(checks[item]).checked = true
         }
         else{
             document.getElementById(checks[item]).checked = false
-            console.log(false)
         }
     }
 }
