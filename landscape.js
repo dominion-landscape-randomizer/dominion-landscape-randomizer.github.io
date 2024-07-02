@@ -57,9 +57,10 @@ function randomize(){
             max = min
         }
 
+        //do not include type if min and max both = 0
         if (max <= 0){
-            required[types[i]] = min
-            allowed[types[i]] = max
+            required[types[i]] = 0
+            allowed[types[i]] = 0
             i++
             continue
         }
@@ -114,7 +115,7 @@ function makeList(type,n){
         if (document.getElementById("horse_check").checked){
             cards = cards.concat(eventsHorses)
         }
-        if (document.getElementById("adventures_check").checked){
+        if (document.getElementById("adventures_token_check").checked){
             cards = cards.concat(eventsAdventures)
         }
         if (document.getElementById("loot_check").checked){
@@ -212,10 +213,12 @@ function connectButtons(){
     document.getElementById("Total_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Total_count").value)
         document.getElementById("Total_count").value = n+1
+        localStorage.setItem('Total_count', n+1)
     }) 
     document.getElementById("Total_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Total_count").value)
         document.getElementById("Total_count").value = Math.max(n-1, 0)
+        localStorage.setItem('Total_count', Math.max(n-1, 0))
     }) 
 
     document.getElementById("Trait_down_button").addEventListener('click', function() {
@@ -230,104 +233,148 @@ function connectButtons(){
     document.getElementById("Event_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_min").value)
         document.getElementById("Event_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Event_min', Math.max(n-1, 0))
     })
     document.getElementById("Event_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_min").value)
         document.getElementById("Event_min").value = n+1
+        localStorage.setItem('Event_min', n+1)
     }) 
     document.getElementById("Event_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_max").value)
         document.getElementById("Event_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Event_max', Math.max(n-1, 0))
     })
     document.getElementById("Event_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Event_max").value)
         document.getElementById("Event_max").value = n+1
+        localStorage.setItem('Event_max', n+1)
     }) 
     
     document.getElementById("Landmark_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_min").value)
         document.getElementById("Landmark_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Landmark_min', Math.max(n-1, 0))
     })
     document.getElementById("Landmark_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_min").value)
         document.getElementById("Landmark_min").value = n+1
+        localStorage.setItem('Landmark_min', n+1)
     }) 
     document.getElementById("Landmark_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_max").value)
         document.getElementById("Landmark_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Landmark_max', Math.max(n-1, 0))
     })
     document.getElementById("Landmark_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Landmark_max").value)
         document.getElementById("Landmark_max").value = n+1
+        localStorage.setItem('Landmark_max', n+1)
     }) 
 
     document.getElementById("Project_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_min").value)
         document.getElementById("Project_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Project_min', Math.max(n-1, 0))
     })
     document.getElementById("Project_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_min").value)
         document.getElementById("Project_min").value = n+1
+        localStorage.setItem('Project_min', n+1)
     }) 
     document.getElementById("Project_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_max").value)
         document.getElementById("Project_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Project_max', Math.max(n-1, 0))
     })
     document.getElementById("Project_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Project_max").value)
         document.getElementById("Project_max").value = n+1
+        localStorage.setItem('Project_max', n+1)
     }) 
 
     document.getElementById("Way_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_min").value)
         document.getElementById("Way_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Way_min', Math.max(n-1, 0))
     })
     document.getElementById("Way_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_min").value)
         document.getElementById("Way_min").value = n+1
+        localStorage.setItem('Way_min', n+1)
     }) 
     document.getElementById("Way_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_max").value)
         document.getElementById("Way_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Way_max', Math.max(n-1, 0))
     })
     document.getElementById("Way_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Way_max").value)
         document.getElementById("Way_max").value = n+1
+        localStorage.setItem('Way_max', n+1)
     }) 
 
     document.getElementById("Trait_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_min").value)
         document.getElementById("Trait_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Trait_min', Math.max(n-1, 0))
     })
     document.getElementById("Trait_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_min").value)
         document.getElementById("Trait_min").value = n+1
+        localStorage.setItem('Trait_min', n+1)
     }) 
     document.getElementById("Trait_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_max").value)
         document.getElementById("Trait_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Trait_max', Math.max(n-1, 0))
     })
     document.getElementById("Trait_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Trait_max").value)
         document.getElementById("Trait_max").value = n+1
+        localStorage.setItem('Trait_max', n+1)
     }) 
 
     document.getElementById("Ally_min_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Ally_min").value)
         document.getElementById("Ally_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Ally_min', Math.max(n-1, 0))
     })
     document.getElementById("Ally_min_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Ally_min").value)
         document.getElementById("Ally_min").value = n+1
+        localStorage.setItem('Ally_min', n+1)
     }) 
     document.getElementById("Ally_max_down_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Ally_max").value)
         document.getElementById("Ally_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Ally_max', Math.max(n-1, 0))
     })
     document.getElementById("Ally_max_up_button").addEventListener('click', function() {
         let n = parseInt(document.getElementById("Ally_max").value)
         document.getElementById("Ally_max").value = n+1
+        localStorage.setItem('Ally_max', n+1)
     }) 
+}
+
+//reads local storage for the checks and counters, and intializes the checkboxes' on-click event listeners  
+function readStorage(){
+    for (item in counters){
+        if (localStorage.getItem(counters[item]) === null) continue;
+        document.getElementById(counters[item]).value = localStorage.getItem(counters[item])
+    }
+    for (item in checks){
+        document.getElementById(mouseChecks[item]).addEventListener('click', function() {
+            localStorage.setItem(mouseChecks[item], this.checked)
+        })
+        if (localStorage.getItem(checks[item]) === "true"){
+            document.getElementById(checks[item]).checked = true
+        }
+        else{
+            document.getElementById(checks[item]).checked = false
+            console.log(false)
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -355,4 +402,5 @@ document.addEventListener('DOMContentLoaded', function() {
     hideBoon()
     connectButtons()
     connectNocturneButtons()
+    readStorage()
   })

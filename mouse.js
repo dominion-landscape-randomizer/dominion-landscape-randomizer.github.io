@@ -28,6 +28,24 @@ function showMouse() {
     document.getElementById("heirloom_tbl").innerHTML = "";
     x.style.display = "block";
     hideBoon();
+    readMouseStorage();
+}
+
+//reads local storage relevant to the Mouse section, and intializes their on-click event listener  s
+function readMouseStorage(){
+    for (item in mouseChecks){ 
+        document.getElementById(mouseChecks[item]).addEventListener('click', function() {
+            localStorage.setItem(mouseChecks[item], this.checked)
+        })
+
+        if (localStorage.getItem(mouseChecks[item]) === "true"){
+            document.getElementById(mouseChecks[item]).checked = true
+        }
+        else{
+            document.getElementById(mouseChecks[item]).checked = false
+            console.log(false)
+        }
+    }
 }
 
 function selectAll() {
