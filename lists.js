@@ -48,6 +48,8 @@ const allyDefault = [new cardShapedThing("0/05/Architects%27_Guild", cardType.AL
 const allyLiaison = [new cardShapedThing("5/58/Circle_of_Witches", cardType.ALLY),new cardShapedThing("5/50/League_of_Shopkeepers", cardType.ALLY)]
 const traitsDefault = [new cardShapedThing("3/3d/Cheap", cardType.TRAIT), new cardShapedThing("e/e6/Fated", cardType.TRAIT), new cardShapedThing("6/63/Fawning", cardType.TRAIT), new cardShapedThing("8/81/Friendly", cardType.TRAIT), new cardShapedThing("1/1b/Hasty", cardType.TRAIT), new cardShapedThing("0/01/Inherited", cardType.TRAIT), new cardShapedThing("b/b3/Inspiring", cardType.TRAIT), new cardShapedThing("6/67/Nearby", cardType.TRAIT), new cardShapedThing("3/36/Patient", cardType.TRAIT), new cardShapedThing("f/ff/Pious", cardType.TRAIT), new cardShapedThing("0/0f/Reckless", cardType.TRAIT), new cardShapedThing("a/a7/Rich", cardType.TRAIT), new cardShapedThing("a/a5/Shy", cardType.TRAIT), new cardShapedThing("0/08/Tireless", cardType.TRAIT)]
 const traitsLoot = [new cardShapedThing("a/af/Cursed", cardType.TRAIT)]
+const rsEventsDefault = [new cardShapedThing("6/63/Amass", cardType.EVENT), new cardShapedThing("a/a0/Kintsugi", cardType.EVENT), new cardShapedThing("d/df/Practice", cardType.EVENT), new cardShapedThing("d/da/Gather", cardType.EVENT), ]
+const rsEventsDebt = [new cardShapedThing("d/dc/Continue", cardType.EVENT), new cardShapedThing("7/72/Credit", cardType.EVENT)]
 
 const expansions = ['base','intrigue','seaside','alchemy','prosperity','cornucopia','hinterlands',
 'dark_ages','guilds','adventures','empires',

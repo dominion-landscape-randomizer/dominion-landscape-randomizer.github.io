@@ -104,10 +104,10 @@ function makeList(type,n){
             }
         }
     }
-    if (type.includes('Event')){
-        cards = cards.concat(eventsDefault)
+    if (type.includes('Event') && !(document.getElementById("rs_check").checked)){
+        cards = cards.concat(eventsDefault).concat(rsEventsDefault)
         if (document.getElementById("debt_check").checked){
-            cards = cards.concat(eventsDebt)
+            cards = cards.concat(eventsDebt).concat(rsEventsDebt)
             if (document.getElementById("victory_check").checked){
                 cards = cards.concat(eventsDebtVictory)
             }
@@ -126,6 +126,12 @@ function makeList(type,n){
         }
         if (document.getElementById("exile_check").checked){
             cards = cards.concat(eventsExile)
+        }
+    }
+    if (type.includes('Event') && (document.getElementById("rs_check").checked)){
+        cards = cards.concat(rsEventsDefault)
+        if (document.getElementById("debt_check").checked){
+            cards = cards.concat(rsEventsDebt)
         }
     }
     if (type.includes('Ally')){
