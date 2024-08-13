@@ -5,23 +5,23 @@ const cardType = Object.freeze({
     WAY: String('Way'),
     ALLY: String('Ally'),
     TRAIT: String('Trait'),
-    PROPHESY: String('Prophesy')
+    PROPHECY: String('Prophecy')
 })
 
 class cardShapedThing{
     constructor(url, type){
-        this.URL = url
-        this.TYPE = type
+          this.URL = url
+          this.TYPE = type
     }
     getURL(){
-        return this.URL
+          return this.URL
     }
     getType(){
-        return this.TYPE
+          return this.TYPE
     }
 }
 
-const types = ['Event','Landmark','Project','Way','Ally','Trait']
+const types = ['Event','Landmark','Project','Way','Trait']
 const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check']
 const counters = ['Total_count', 'Event_min', 'Event_max', 'Landmark_min', 'Landmark_max', 'Project_min', 'Project_max', 'Way_min', 'Way_max', 'Trait_min', 'Trait_max', 'Ally_min', 'Ally_max']
 
@@ -44,46 +44,112 @@ const eventsAdventures = [new cardShapedThing("d/df/Ball", cardType.EVENT), new 
 const eventsExile = [new cardShapedThing("9/91/Banish", cardType.EVENT), new cardShapedThing("c/c3/Enclave", cardType.EVENT), new cardShapedThing("e/e3/Invest", cardType.EVENT), new cardShapedThing("7/76/Transport", cardType.EVENT)]
 const eventsHorses = [new cardShapedThing("f/fb/Bargain", cardType.EVENT), new cardShapedThing("b/b7/Demand", cardType.EVENT), new cardShapedThing("b/bb/Ride", cardType.EVENT), new cardShapedThing("d/d9/Stampede", cardType.EVENT)]
 const eventsLoot = [new cardShapedThing("7/70/Foray", cardType.EVENT), new cardShapedThing("8/84/Invasion", cardType.EVENT), new cardShapedThing("f/f3/Looting", cardType.EVENT), new cardShapedThing("b/b5/Peril", cardType.EVENT), new cardShapedThing("f/ff/Prosper", cardType.EVENT)]
-const allyDefault = [new cardShapedThing("0/05/Architects%27_Guild", cardType.ALLY),new cardShapedThing("1/1b/Band_of_Nomads", cardType.ALLY),new cardShapedThing("e/ec/Cave_Dwellers", cardType.ALLY),new cardShapedThing("a/ab/City-state", cardType.ALLY),new cardShapedThing("0/04/Coastal_Haven", cardType.ALLY),new cardShapedThing("0/0d/Crafters%27_Guild", cardType.ALLY),new cardShapedThing("f/f7/Desert_Guides", cardType.ALLY),new cardShapedThing("d/d2/Family_of_Inventors", cardType.ALLY),new cardShapedThing("9/9c/Fellowship_of_Scribes", cardType.ALLY),new cardShapedThing("7/7d/Forest_Dwellers", cardType.ALLY),new cardShapedThing("7/79/Gang_of_Pickpockets", cardType.ALLY),new cardShapedThing("9/9d/Island_Folk", cardType.ALLY),new cardShapedThing("0/03/League_of_Bankers", cardType.ALLY),new cardShapedThing("f/f2/Market_Towns", cardType.ALLY),new cardShapedThing("b/b8/Mountain_Folk", cardType.ALLY),new cardShapedThing("6/60/Order_of_Astrologers", cardType.ALLY),new cardShapedThing("1/1b/Order_of_Masons", cardType.ALLY),new cardShapedThing("b/b9/Peaceful_Cult", cardType.ALLY),new cardShapedThing("a/a4/Plateau_Shepherds", cardType.ALLY),new cardShapedThing("5/5b/Trappers%27_Lodge", cardType.ALLY),new cardShapedThing("e/e6/Woodworkers%27_Guild", cardType.ALLY)]
-const allyLiaison = [new cardShapedThing("5/58/Circle_of_Witches", cardType.ALLY),new cardShapedThing("5/50/League_of_Shopkeepers", cardType.ALLY)]
 const traitsDefault = [new cardShapedThing("3/3d/Cheap", cardType.TRAIT), new cardShapedThing("e/e6/Fated", cardType.TRAIT), new cardShapedThing("6/63/Fawning", cardType.TRAIT), new cardShapedThing("8/81/Friendly", cardType.TRAIT), new cardShapedThing("1/1b/Hasty", cardType.TRAIT), new cardShapedThing("0/01/Inherited", cardType.TRAIT), new cardShapedThing("b/b3/Inspiring", cardType.TRAIT), new cardShapedThing("6/67/Nearby", cardType.TRAIT), new cardShapedThing("3/36/Patient", cardType.TRAIT), new cardShapedThing("f/ff/Pious", cardType.TRAIT), new cardShapedThing("0/0f/Reckless", cardType.TRAIT), new cardShapedThing("a/a7/Rich", cardType.TRAIT), new cardShapedThing("a/a5/Shy", cardType.TRAIT), new cardShapedThing("0/08/Tireless", cardType.TRAIT)]
 const traitsLoot = [new cardShapedThing("a/af/Cursed", cardType.TRAIT)]
-const rsEventsDefault = [new cardShapedThing("6/63/Amass", cardType.EVENT), new cardShapedThing("a/a0/Kintsugi", cardType.EVENT), new cardShapedThing("d/df/Practice", cardType.EVENT), new cardShapedThing("d/da/Gather", cardType.EVENT), ]
+const rsEventsDefault = [new cardShapedThing("6/63/Amass", cardType.EVENT), new cardShapedThing("a/a0/Kintsugi", cardType.EVENT), new cardShapedThing("d/df/Practice", cardType.EVENT), new cardShapedThing("d/da/Gather", cardType.EVENT), new cardShapedThing("0/00/Asceticism", cardType.EVENT), new cardShapedThing("f/fd/Foresight", cardType.EVENT), new cardShapedThing("2/26/Sea_Trade", cardType.EVENT), new cardShapedThing("c/ca/Receive_Tribute", cardType.EVENT)]
 const rsEventsDebt = [new cardShapedThing("d/dc/Continue", cardType.EVENT), new cardShapedThing("7/72/Credit", cardType.EVENT)]
+
+const allyDefault = ["0/05/Architects%27_Guild","1/1b/Band_of_Nomads","e/ec/Cave_Dwellers","a/ab/City-state","0/04/Coastal_Haven","0/0d/Crafters%27_Guild","f/f7/Desert_Guides","d/d2/Family_of_Inventors","9/9c/Fellowship_of_Scribes","7/7d/Forest_Dwellers","7/79/Gang_of_Pickpockets","9/9d/Island_Folk","0/03/League_of_Bankers","f/f2/Market_Towns","b/b8/Mountain_Folk","6/60/Order_of_Astrologers","1/1b/Order_of_Masons","b/b9/Peaceful_Cult","a/a4/Plateau_Shepherds","5/5b/Trappers%27_Lodge","e/e6/Woodworkers%27_Guild"]
+const allyLiaison = ["5/58/Circle_of_Witches","5/50/League_of_Shopkeepers"]
+const prophecyDefault = ["2/22/Approaching_Army","1/1d/Biding_Time","6/60/Bureaucracy","c/c7/Divine_Wind","3/3b/Enlightenment","c/cb/Flourishing_Trade","f/fb/Good_Harvest","5/54/Great_Leader","0/0b/Growth","5/5d/Kind_Emperor","f/f7/Panic","b/bb/Progress","4/45/Rapid_Expansion","0/04/Sickness"]
+const prophecyDebt = ["4/4f/Harsh_Winter"]
+    
 
 const expansions = ['base','intrigue','seaside','alchemy','prosperity','cornucopia','hinterlands',
 'dark_ages','guilds','adventures','empires',
 'nocturne','renaissance','menagerie','allies',
-'plunder','promo']
+'plunder','rising_sun','promo']
 
-//action cards (for Way of the Mouse)
-const base = ["1/1c/Cellar","2/29/Chapel","f/fe/Moat","3/32/Harbinger","7/78/Merchant","0/0b/Vassal","5/5a/Village","5/50/Workshop"]
-const baseRemoved = ["b/b7/Chancellor","d/d6/Woodcutter"]
-const intrigue = ["3/30/Courtyard","f/f7/Lurker","0/0f/Pawn","0/0e/Masquerade","8/8e/Shanty_Town","8/88/Steward","e/e7/Swindler","f/f7/Wishing_Well"]
-const intrigueRemoved = ["b/b3/Secret_Chamber","9/95/Great_Hall"]
-const alchemy = ["2/26/Herbalist"]
-const seaside = ["c/c9/Haven","4/4f/Lighthouse","6/67/Native_Village","3/3b/Fishing_Village","c/c6/Lookout","3/30/Monkey","a/a7/Sea_Chart","0/05/Smugglers","6/6d/Warehouse"]
-const seasideRemoved = ["f/fb/Embargo","5/56/Pearl_Diver","7/74/Ambassador"]
-const prosperity = ["c/c2/Watchtower"]
-const prosperityRemoved = ["a/a7/Trade_Route"]
-const cornucopia = ["d/df/Hamlet","7/71/Menagerie","3/3b/Shop"]
-const cornucopiaRemoved = ["5/55/Fortune_Teller"]
-const hinterlands = ["c/cd/Crossroads","f/f7/Develop","c/c7/Guard_Dog","f/fc/Oasis","8/8d/Scheme"]
-const hinterlandsRemoved = ["d/df/Duchess","9/97/Oracle"]
-const darkAges = ["2/2f/Beggar","7/79/Squire","3/3f/Vagrant","e/e6/Forager","8/8e/Hermit","f/f1/Market_Square","7/70/Sage","b/b4/Storeroom","7/74/Urchin"]
-const guilds = ["b/bd/Farrier","d/d2/Stonemason","a/ab/Infirmary"]
-const guildsCoffers = ["2/2c/Candlestick_Maker"]
-const guildsRemoved = ["b/b2/Doctor"]
-const adventures = ["6/60/Page","7/70/Peasant","1/1d/Ratcatcher","d/d3/Raze","5/50/Amulet","f/fa/Caravan_Guard","1/1e/Dungeon","e/ec/Gear","e/e1/Guide"]
-const empires = ["4/4e/Encampment","f/fb/Patrician","1/14/Settlers","2/25/Catapult","7/7c/Chariot_Race","b/bb/Enchantress","3/37/Farmers%27_Market","e/e9/Gladiator"]
-const nocturne = ["f/f0/Druid","6/60/Faithful_Hound","f/f7/Pixie","9/9a/Tracker","d/d2/Fool","2/23/Leprechaun","8/8d/Secret_Cave"]
-const renaissance = ["8/88/Border_Guard","e/e8/Lackeys","b/ba/Cargo_Ship","d/d3/Experiment","5/5a/Improve"]
-const renaissanceVillagers = ["9/90/Acting_Troupe"]
-const menagerie = ["7/77/Black_Cat","f/ff/Goatherd","2/21/Sheepdog","7/7e/Snowy_Village"]
-const menagerieHorses = ["9/92/Sleigh","b/b8/Scrap"]
-const menagerieExile = ["1/1a/Camel_Train"]
-const alliesLiaisons = ["4/4b/Sycophant","a/a2/Importer","c/c6/Underling","0/01/Student"]
-const allies = ["c/c3/Merchant_Camp","9/90/Sentinel","f/fd/Herb_Gatherer","d/d5/Battle_Plan","c/c9/Tent","9/91/Old_Map","d/df/Town_Crier","e/eb/Blacksmith"]
-const plunder = ["2/2a/Grotto","d/d1/Shaman","8/80/Secluded_Shrine","6/6b/Siren","6/66/Stowaway","c/cc/Taskmaster"]
-const plunderLoot = ["0/01/Search"]
-const promo = ["f/fa/Black_Market", "d/df/Church"]
+//$5 non-duration action cards for Riverboat
+const Base_5 = ["4/46/Bandit","e/e0/Council_Room","e/ec/Festival","0/0c/Laboratory","9/98/Library","7/7e/Market","8/8e/Mine","4/4c/Sentry","f/f3/Witch"]
+const Intrigue_5 = ["7/7c/Courtier","4/47/Minion","c/c8/Patrol","2/27/Replace","a/a9/Torturer","3/36/Trading_Post","d/d3/Upgrade"]
+const Intrigue1E_5 = ["6/60/Saboteur","0/00/Tribute"]
+const Seaside_5 = ["f/f7/Bazaar","f/fd/Treasury"]
+const Seaside1E_5 = ["3/3a/Explorer","0/0a/Ghost_Ship"]
+const Alchemy_5 = ["2/20/Apprentice"]
+const Prosperity_5 = ["f/f9/Charlatan","3/30/City","7/75/Magnate","b/bc/Mint","f/f1/Rabble","6/62/Vault"]
+const Prosperity1E_5 = ["5/5d/Counting_House","8/89/Mountebank"]
+const Cornucopia1E_5 = ["1/1c/Harvest"]
+const Cornucopia_5 = ["a/ab/Hunting_Party","3/39/Carnival","7/77/Ferryman","b/b7/Joust","1/1b/Jester"]
+const Hinterlands_5 = ["c/cc/Berserker","d/d6/Cartographer","9/96/Haggler","2/29/Highway","1/1f/Inn","0/06/Margrave","e/e1/Souk","3/35/Stables","d/d6/Wheelwright","b/bf/Witch%27s_Hut"]
+const Hinterlands1E_5 = ["2/2f/Embassy","6/68/Mandarin"]
+const DarkAges_5 = ["5/51/Band_of_Misfits","4/43/Bandit_Camp","c/cd/Catacombs","a/a1/Count","1/13/Graverobber","c/c2/Junk_Dealer","3/37/Mystic","f/f8/Rebuild","f/f6/Rogue","9/9a/Knights","1/18/Cultist"]
+const Knights_5 = ["a/ad/Dame_Anna","d/dd/Dame_Josephine","1/10/Dame_Molly","8/85/Dame_Natalie","c/c3/Dame_Sylvia","a/a6/Sir_Bailey","1/18/Sir_Destry","2/21/Sir_Michael","3/30/Sir_Vander"]
+const GuildsCoffers_5 = ["b/b9/Baker","e/ed/Butcher","a/af/Merchant_Guild","e/e8/Footpad"]
+const Guilds_5 = ["8/82/Journeyman","0/01/Soothsayer"]
+const Adventures_5 = ["0/01/Artificer","9/9a/Lost_City","c/cf/Royal_Carriage","6/6a/Storyteller","b/b2/Wine_Merchant"]
+const AdventuresTokens_5 = ["4/4c/Giant"]
+const Empires_5 = ["c/c6/Bustling_Village","9/91/Crown","1/15/Forum","f/fe/Emporium","6/64/Legionary","4/48/Wild_Hunt"]
+const EmpiresVP_5 = ["3/33/Groundskeeper"]
+const Nocturne_5 = ["c/c9/Cursed_Village","f/f4/Pooka","3/3a/Sacred_Grove","0/07/Tormentor","2/29/Tragic_Hero","4/4b/Werewolf"]
+const Renaissance_5 = ["0/0e/Old_Witch","2/2e/Scholar","4/4b/Seer","8/87/Treasurer"]
+const RenaissanceCoffers_5 = ["a/af/Recruiter","e/ee/Sculptor","4/46/Swashbuckler","7/74/Villain"]
+const Menagerie_5 = ["a/a5/Hunting_Lodge","a/ad/Falconer","a/ad/Kiln"]
+const MenagerieExile_5 = ["0/05/Coven","9/9f/Displace","9/94/Sanctuary"]
+const MenagerieHorse_5 = ["b/b6/Livery","6/6b/Paddock"]
+const Allies_5 = ["9/99/Barbarian","2/28/Capital_City","2/23/Galleria","2/2a/Hunter","d/d8/Modify","7/7f/Skirmisher","4/41/Specialist","5/50/Swap","b/b7/Sorceress","3/35/Elder","2/29/Sorcerer","d/da/Hill_Fort"]
+const AlliesLiaison_5 = ["9/99/Emissary","b/ba/Guildmaster"]
+const Plunder_5 = ["7/79/First_Mate","9/9b/Mining_Road","6/61/Pilgrim","8/8a/Trickster","2/20/Wealthy_Village"]
+const RisingSunDebt_5 = ["c/c2/Gold_Mine","5/5e/Imperial_Envoy","6/6d/Litter"]
+const RisingSunOmen_5 = ["d/dc/Kitsune","3/39/Tea_House"]
+const RisingSun_5 = ["a/ac/Rice_Broker","f/f6/Ronin","7/71/Tanuki"]
+const Promo_5 = ["3/36/Avanto","a/a2/Governor"]
+
+//$2 action cards (for Way of the Mouse)
+const Base_2 = ["1/1c/Cellar","2/29/Chapel","f/fe/Moat"]
+const Intrigue_2 = ["3/30/Courtyard","f/f7/Lurker","0/0f/Pawn"]
+const Intrigue1E_2 = ["b/b3/Secret_Chamber"]
+const Seaside1E_2 = ["f/fb/Embargo","5/56/Pearl_Diver"]
+const Seaside_2 = ["c/c9/Haven","4/4f/Lighthouse","6/67/Native_Village"]
+const Alchemy_2 = ["2/26/Herbalist"]
+const Cornucopia_2 = ["d/df/Hamlet"]
+const Hinterlands_2 = ["c/cd/Crossroads"]
+const Hinterlands1E_2 = ["d/df/Duchess"]
+const DarkAges_2 = ["2/2f/Beggar","7/79/Squire","3/3f/Vagrant"]
+const Guilds_2 = ["b/bd/Farrier","d/d2/Stonemason"]
+const GuildsCoffers_2 = ["2/2c/Candlestick_Maker"]
+const Adventures_2 = ["6/60/Page","7/70/Peasant","1/1d/Ratcatcher","d/d3/Raze"]
+const Empires_2 = ["4/4e/Encampment","f/fb/Patrician","1/14/Settlers"]
+const Nocturne_2 = ["f/f0/Druid","6/60/Faithful_Hound","f/f7/Pixie","9/9a/Tracker"]
+const Renaissance_2 = ["8/88/Border_Guard","e/e8/Lackeys"]
+const Menagerie_2 = ["7/77/Black_Cat"]
+const MenagerieHorse_2 = ["9/92/Sleigh"]
+const Allies_2 = ["d/df/Town_Crier"]
+const AlliesLiaison_2 = ["4/4b/Sycophant"]
+const Plunder_2 = ["2/2a/Grotto","d/d1/Shaman"]
+const PlunderLoot_2 = ["0/01/Search"]
+const RisingSun_2 = ["5/54/Fishmonger","d/d6/Snake_Witch"]
+
+//$3 action cards for Mouse, Young Witch and Ferryman
+const Base1E_3 = ["b/b7/Chancellor","d/d6/Woodcutter"]
+const Base_3 = ["3/32/Harbinger","7/78/Merchant","0/0b/Vassal","5/5a/Village","5/50/Workshop"]
+const Intrigue1E_3 = ["9/95/Great_Hall"]
+const Intrigue_3 = ["0/0e/Masquerade","8/8e/Shanty_Town","8/88/Steward","e/e7/Swindler","f/f7/Wishing_Well"]
+const Seaside1E_3 = ["7/74/Ambassador"]
+const Seaside_3 = ["3/3b/Fishing_Village","c/c6/Lookout","3/30/Monkey","a/a7/Sea_Chart","0/05/Smugglers","6/6d/Warehouse"]
+const Prosperity1E_3 = ["a/a7/Trade_Route"]
+const Prosperity_3 = ["c/c2/Watchtower"]
+const Cornucopia1E_3 = ["5/55/Fortune_Teller"]
+const Cornucopia_3 = ["7/71/Menagerie","3/3b/Shop"]
+const Hinterlands_3 = ["f/f7/Develop","c/c7/Guard_Dog","f/fc/Oasis","8/8d/Scheme"]
+const Hinterlands1E_3 = ["9/97/Oracle"]
+const DarkAges_3 = ["e/e6/Forager","8/8e/Hermit","f/f1/Market_Square","7/70/Sage","b/b4/Storeroom","7/74/Urchin"]
+const Guilds_3 = ["a/ab/Infirmary"]
+const Guilds1E_3 = ["b/b2/Doctor"]
+const Adventures_3 = ["5/50/Amulet","f/fa/Caravan_Guard","1/1e/Dungeon","e/ec/Gear","e/e1/Guide"]
+const Empires_3 = ["2/25/Catapult","b/bb/Enchantress","e/e9/Gladiator","3/37/Farmers%27_Market"]
+const EmpiresVP_3 = ["7/7c/Chariot_Race"]
+const Nocturne_3 = ["d/d2/Fool","2/23/Leprechaun","8/8d/Secret_Cave","8/8b/Zombie_Apprentice","5/59/Zombie_Mason","c/c9/Zombie_Spy"]
+const RenaissanceCoffers_3 = ["9/90/Acting_Troupe"]
+const Renaissance_3 = ["b/ba/Cargo_Ship","d/d3/Experiment","5/5a/Improve"]
+const MenagerieExile_3 = ["1/1a/Camel_Train"]
+const Menagerie_3 = ["f/ff/Goatherd","2/21/Sheepdog","7/7e/Snowy_Village"]
+const MenagerieHorse_3 = ["b/b8/Scrap"]
+const Allies_3 = ["c/c3/Merchant_Camp","9/90/Sentinel","f/fd/Herb_Gatherer","9/91/Old_Map","e/eb/Blacksmith","c/c9/Tent","d/d5/Battle_Plan"]
+const AlliesLiaison_3 = ["a/a2/Importer","c/c6/Underling","0/01/Student"]
+const Plunder_3 = ["8/80/Secluded_Shrine","6/6b/Siren","6/66/Stowaway","c/cc/Taskmaster"]
+const RisingSun_3 = ["d/d8/Riverboat"]
+const RisingSunDebt_3 = ["7/75/Craftsman","1/16/Root_Cellar"]
+const Promo_3 = ["f/fa/Black_Market","d/df/Church"]
+
+//TODO: $4 action cards for YW and Ferryman

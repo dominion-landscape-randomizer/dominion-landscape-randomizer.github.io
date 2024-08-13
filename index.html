@@ -13,114 +13,15 @@
 <body>
     <div class="header"><span class="visible-button"><button id="about_Button" style="margin-bottom: 10px;">About Page</button></span></div>
     <div class="container">
-        <div id="card_div">
-            <span class="visible-button"><button id="Mouse_Add" style="margin-bottom: 10px;">Way of the Mouse Randomizer</button></span>
+        <span class="visible-button"><button id="Mouse_Add" style="margin-bottom: 10px;">Way of the Mouse Randomizer</button></span>
+        <span class="visible-button"><button id="Riverboat_Add" style="margin-bottom: 10px;">Riverboat Randomizer</button></span><br>
+        <div id="landscape_div">
+            <table id="ally_tbl">
+            </table>
+            <table id="prophecy_tbl">
+            </table>
             <table id="card_tbl">
             </table>
-
-            <div id="mouse_div">
-                <table id="mouse_tbl"></table>
-                <div id="boon_div">
-                    <span class="visible-button"><button id="3_Boons" style="margin-bottom: 10px;">Receive 3 Boons</button></span>
-                    <span id="boon_count">Boons left in deck: 12</span>
-                    <span class="visible-button"><button id="1_Boon" style="margin-bottom: 10px;">Receive 1 Boon</button></span>
-                    <span class="visible-button"><button id="1_Hex" style="margin-bottom: 10px;">Receive 1 Hex</button></span>
-                    <table id = "boon_tbl"></table>
-                </div>
-                <div id ="heirloom_div">
-                    <table id="heirloom_tbl">
-                    </table>
-                </div>
-                <div id ="state_div">
-                    <table id="state_tbl">
-                    </table>
-                </div>
-                <p id = "rules_clarification" style ="font-variant: normal; margin-top: 0%; margin-bottom: 0%;"></p>
-                Way of the Mouse Randomizer
-                <div class="expansion-buttons">
-                    <table id="expansion_tbl">
-                        <tr>
-                            <td>
-                                <input type="checkbox" , id='base_check'></input>
-                                <label for="base_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='intrigue_check'></input>
-                                <label for="intrigue_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='seaside_check'></input>
-                                <label for="seaside_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='alchemy_check'></input>
-                                <label for="alchemy_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='prosperity_check'></input>
-                                <label for="prosperity_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='cornucopia_check'></input>
-                                <label for="cornucopia_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='hinterlands_check'></input>
-                                <label for="hinterlands_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='dark_ages_check'></input>
-                                <label for="dark_ages_check"></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" , id='guilds_check'></input>
-                                <label for="guilds_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='adventures_check'></input>
-                                <label for="adventures_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='empires_check'></input>
-                                <label for="empires_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='nocturne_check'></input>
-                                <label for="nocturne_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='renaissance_check'></input>
-                                <label for="renaissance_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='menagerie_check'></input>
-                                <label for="menagerie_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='allies_check'></input>
-                                <label for="allies_check"></label>
-                            </td>
-                            <td>
-                                <input type="checkbox" , id='plunder_check'></input>
-                                <label for="plunder_check"></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" , id='promo_check'></input>
-                                <label for="promo_check"></label>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <span class="visible-button"><button id="Expansion_Select" style="margin-bottom: 10px;">Select All Expansions</button></span><br>
-                <input type="checkbox" , id='1E_check'></input> Include removed 1E cards<br>
-                <span class="visible-button"><button id="Mouse_Randomize" style="margin-bottom: 10px;">Generate Action
-                        Card</button></span><br>
-            </div>
-
             <div id="trait_div">
                 Number of Cards Eligible for Trait <button id="Trait_?" style="margin-bottom: 10px;">⍰</button>
                 <div class="button-group"><button id="Trait_down_button" style="margin-bottom: 10px;">⬇️</button><input
@@ -130,7 +31,137 @@
                         Card</button></span><br>
                 <textarea id="Trait_index" rows="1" cols="2" readonly placeholder=""></textarea>
             </div>
+        </div>
+        <div id="card_div">
+            <div id="mouse_div">
+                <table id="mouse_tbl"></table>
+                
+                <div id ="mouse_heirloom_div">
+                    <table id="mouse_heirloom_tbl">
+                    </table>
+                </div>
+                <div id = "mouse_artifact_div">
+                    <table id="mouse_artifact_tbl">
+                    </table>
+                </div>
+                <p id = "mouse_rules_clarification" style ="font-variant: normal; margin-top: 0%; margin-bottom: 0%;"></p>
+            </div>
+            <div id="riverboat_div">
+                <table id="riverboat_tbl"></table>
+                
+                <div id ="riverboat_heirloom_div">
+                    <table id="riverboat_heirloom_tbl">
+                    </table>
+                </div>
+                <div id = "riverboat_artifact_div">
+                    <table id="riverboat_artifact_tbl">
+                    </table>
+                </div>
+                <p id = "riverboat_rules_clarification" style ="font-variant: normal; margin-top: 0%; margin-bottom: 0%;"></p>
+                <table id="riverboat_self_tbl"></table>
+            </div>
+            <div class="expansion-buttons">
+                <table id="expansion_tbl">
+                    <tr>
+                        <td>
+                            <input type="checkbox" , id='base_check'></input>
+                            <label for="base_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='intrigue_check'></input>
+                            <label for="intrigue_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='seaside_check'></input>
+                            <label for="seaside_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='alchemy_check'></input>
+                            <label for="alchemy_check"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" , id='prosperity_check'></input>
+                            <label for="prosperity_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='cornucopia_check'></input>
+                            <label for="cornucopia_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='hinterlands_check'></input>
+                            <label for="hinterlands_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='dark_ages_check'></input>
+                            <label for="dark_ages_check"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" , id='guilds_check'></input>
+                            <label for="guilds_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='adventures_check'></input>
+                            <label for="adventures_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='empires_check'></input>
+                            <label for="empires_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='nocturne_check'></input>
+                            <label for="nocturne_check"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" , id='renaissance_check'></input>
+                            <label for="renaissance_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='menagerie_check'></input>
+                            <label for="menagerie_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='allies_check'></input>
+                            <label for="allies_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='plunder_check'></input>
+                            <label for="plunder_check"></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" , id='rising_sun_check'></input>
+                            <label for="rising_sun_check"></label>
+                        </td>
+                        <td>
+                            <input type="checkbox" , id='promo_check'></input>
+                            <label for="promo_check"></label>
+                        </td>
+                    </tr>
+                </table>
+            <span class="visible-button"><button id="Expansion_Select" style="margin-bottom: 10px;">Select All Expansions</button></span><br>
+            <input type="checkbox" , id='1E_check'></input> Include removed 1E cards<br>
+            <span class="visible-button"><button id="Mouse_Randomize" style="margin-bottom: 10px;">Generate Mouse Card</button></span>
+            <span class="visible-button"><button id="Riverboat_Randomize" style="margin-bottom: 10px;">Generate Riverboat Card</button></span><br>
+            </div>
 
+        </div>
+        <div id="boon_div">
+            <span class="visible-button"><button id="3_Boons" style="margin-bottom: 10px;">Receive 3 Boons</button></span>
+            <span id="boon_count">Boons left in deck: 12</span>
+            <span class="visible-button"><button id="1_Boon" style="margin-bottom: 10px;">Receive 1 Boon</button></span>
+            <span class="visible-button"><button id="1_Hex" style="margin-bottom: 10px;">Receive 1 Hex</button></span>
+            <table id = "boon_tbl"></table>
+            <div id ="state_div">
+                <table id="state_tbl">
+                </table>
+            </div>
         </div>
         Total Cards <div class="button-group"><button id="Total_down_button"
                 style="margin-bottom: 10px;">⬇️</button><input type="number" , value='2' , min='0' ,
@@ -188,16 +219,6 @@
                     </td>
                 </tr>
                 <td>
-                    <p><b>Ally</b></p>
-                    Minimum: <div class="button-group"><button id="Ally_min_down_button"
-                            style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                            id='Ally_min'><button id="Ally_min_up_button" style="margin-bottom: 10px;">⬆️</button></div>
-                    <br>
-                    Maximum: <div class="button-group"><button id="Ally_max_down_button"
-                            style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                            id='Ally_max'><button id="Ally_max_up_button" style="margin-bottom: 10px;">⬆️</button></div>
-                </td>
-                <td>
                     <p><b>Traits</b></p>
                     Minimum: <div class="button-group"><button id="Trait_min_down_button"
                             style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
@@ -208,10 +229,15 @@
                             id='Trait_max'><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button>
                     </div>
                 </td>
-                </td>
                 </tr>
             </table>
         </div>
+        <br>
+        <span class="visible-button"><button id="Add_Ally" style="margin-bottom: 10px;font-size: medium;font-family: 'Times New Roman', Times, serif;font-variant: small-caps;">Add Ally</button></span>
+        <span class="visible-button"><button id="Add_Prophecy" style="margin-bottom: 10px;font-size: medium;font-family: 'Times New Roman', Times, serif;font-variant: small-caps;">Add Prophecy</button></span>
+        <br>
+        <span class="visible-button"><button id="Remove_Ally" style="margin-bottom: 10px;font-size: medium;font-family: 'Times New Roman', Times, serif;font-variant: small-caps;">Remove Ally</button></span>
+        <span class="visible-button"><button id="Remove_Prophecy" style="margin-bottom: 10px;font-size: medium;font-family: 'Times New Roman', Times, serif;font-variant: small-caps;">Remove Prophecy</button></span>
         <br>
         <div class="component-checkboxes">
             <input type="checkbox" , id='victory_check'></input> Victory Tokens<br>
@@ -229,7 +255,9 @@
     <script src="lists.js"></script>
     <script src="landscape.js"></script>
     <script src="trait.js"></script>
+    <script src="cards.js"></script>
     <script src="mouse.js"></script>
+    <script src="riverboat.js"></script>
     <script src="nocturne.js"></script>
 </body>
 

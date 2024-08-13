@@ -44,7 +44,7 @@ function randomize(){
     //empty the cards list and hide other elements
     cards = []
     hideTrait()
-    hideMouse()
+    hideCards()
     //hideBoon()
 
     let included = ""
@@ -134,13 +134,6 @@ function makeList(type,n){
             cards = cards.concat(rsEventsDebt)
         }
     }
-    if (type.includes('Ally')){
-        cards = cards.concat(allyDefault)
-        if (document.getElementById("liaison_check").checked){
-            cards = cards.concat(allyLiaison)
-        }
-    }
-
     if (cards.length > 0) randomCards(n)
 }
 
@@ -189,7 +182,7 @@ function randomCards(n){
         }
         //displays the mouse randomizer if the card is Way of the Mouse
         else if (cards[index].getURL() === "2/29/Way_of_the_Mouse"){
-            showMouse()
+            showCards()
         }
         cardsToAdd.push(cards[index])
         chosen++
@@ -212,6 +205,39 @@ function randomCards(n){
     while (i < tableSize){
         table.deleteRow(i)
         i++
+    }
+    table.style.display = "block";
+}
+
+function chooseAlly(){
+    let i = allyDefault.length
+    if (document.getElementById("liaison_check").checked) i += allyLiaison.length
+
+    let index = Math.floor(Math.random() * i)
+    let table = document.getElementById('ally_tbl')
+    
+    if (index < allyDefault.length){
+        addRow(allyDefault[index], table, 0, 320)
+    }
+    else{
+        index -= allyDefault.length
+        addRow(allyLiaison[index], table, 0, 320)
+    }
+}
+
+function chooseProphecy(){
+    let i = prophecyDefault.length
+    if (document.getElementById("debt_check").checked) i += prophecyDebt.length
+
+    let index = Math.floor(Math.random() * i)
+    let table = document.getElementById('prophecy_tbl')
+    
+    if (index < prophecyDefault.length){
+        addRow(prophecyDefault[index], table, 0, 320)
+    }
+    else{
+        index -= prophecyDefault.length
+        addRow(prophecyDebt[index], table, 0, 320)
     }
 }
 
@@ -340,27 +366,6 @@ function connectButtons(){
         document.getElementById("Trait_max").value = n+1
         localStorage.setItem('Trait_max', n+1)
     }) 
-
-    document.getElementById("Ally_min_down_button").addEventListener('click', function() {
-        let n = parseInt(document.getElementById("Ally_min").value)
-        document.getElementById("Ally_min").value = Math.max(n-1, 0)
-        localStorage.setItem('Ally_min', Math.max(n-1, 0))
-    })
-    document.getElementById("Ally_min_up_button").addEventListener('click', function() {
-        let n = parseInt(document.getElementById("Ally_min").value)
-        document.getElementById("Ally_min").value = n+1
-        localStorage.setItem('Ally_min', n+1)
-    }) 
-    document.getElementById("Ally_max_down_button").addEventListener('click', function() {
-        let n = parseInt(document.getElementById("Ally_max").value)
-        document.getElementById("Ally_max").value = Math.max(n-1, 0)
-        localStorage.setItem('Ally_max', Math.max(n-1, 0))
-    })
-    document.getElementById("Ally_max_up_button").addEventListener('click', function() {
-        let n = parseInt(document.getElementById("Ally_max").value)
-        document.getElementById("Ally_max").value = n+1
-        localStorage.setItem('Ally_max', n+1)
-    }) 
 }
 
 //reads local storage for the checks and counters, and intializes the checkboxes' on-click event listeners  
@@ -400,10 +405,20 @@ document.addEventListener('DOMContentLoaded', function() {
         If you do not own the expansion Allies, you can either keep this box unchecked and have each player start with 5 Favor Tokens, or you can check this box and use your blank cards as a Liaison pile (eg. Underling)`)
     }) 
     document.getElementById("Expansion_Select").addEventListener('click', selectAll) 
-    document.getElementById("Mouse_Randomize").addEventListener('click', makeActionList) 
+    document.getElementById("Mouse_Randomize").addEventListener('click', mouseMakeActionList) 
+    document.getElementById("Riverboat_Randomize").addEventListener('click', riverboatMakeActionList) 
     document.getElementById("Mouse_Add").addEventListener('click', addMouse) 
+    document.getElementById("Riverboat_Add").addEventListener('click', addRiverboat) 
+    document.getElementById("Add_Ally").addEventListener('click', chooseAlly) 
+    document.getElementById("Add_Prophecy").addEventListener('click', chooseProphecy) 
+    document.getElementById("Remove_Ally").addEventListener('click', function(){
+        document.getElementById('ally_tbl').deleteRow(0)
+    }) 
+    document.getElementById("Remove_Prophecy").addEventListener('click', function(){
+        document.getElementById('prophecy_tbl').deleteRow(0)
+    }) 
     hideTrait()
-    hideMouse()
+    hideCards()
     hideBoon()
     connectButtons()
     connectNocturneButtons()

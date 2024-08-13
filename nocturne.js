@@ -10,7 +10,7 @@ function hideBoon() {
     document.getElementById("3_Boons").style.display = "none";
     document.getElementById("1_Boon").style.display = "none";
     document.getElementById("1_Hex").style.display = "none";
-    var x = document.getElementById("boon_div").style.display = "none";
+    document.getElementById("boon_div").style.display = "none";
 }
 
 function showBoon() {
@@ -35,7 +35,7 @@ function isNocturne(imageURL) {
             boonButton = document.getElementById("1_Boon");
             boonButton.style.display = "inline"
             showBoon()
-            addRow("1/18/Pouch", document.getElementById("heirloom_tbl"), 0, 200)
+            addRow("1/18/Pouch", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("rules_clarification").innerHTML = "All players start with a Pouch instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             break;
         case "d/d2/Fool":
@@ -46,7 +46,7 @@ function isNocturne(imageURL) {
             boonButton.style.display = "inline"
             showBoon()
             addRow("3/3e/Lost_in_the_Woods", document.getElementById("state_tbl"), 0, 320)
-            addRow("3/3e/Lucky_Coin", document.getElementById("heirloom_tbl"), 0, 200)
+            addRow("3/3e/Lucky_Coin", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("rules_clarification").innerHTML = "All players start with a Lucky Coin instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             break;
         case "2/23/Leprechaun":
@@ -55,18 +55,22 @@ function isNocturne(imageURL) {
             hexButton.style.display = "inline"
             showBoon()
             document.getElementById("boon_count").innerHTML = "Hexes left in deck: 12"
-            addRow("6/68/Wish", document.getElementById("heirloom_tbl"), 0, 200)
+            addRow("6/68/Wish", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             break;
         case "f/f7/Pixie":
-            addRow("d/da/Goat", document.getElementById("heirloom_tbl"), 0, 200)
+            addRow("d/da/Goat", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Pixie, therefore it cannot receive Boons.<br>All players start with a Goat instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             //hideboons
             break;
         case "8/8d/Secret_Cave":
-            let heriloomTable = document.getElementById("heirloom_tbl")
-            addRow("d/db/Magic_Lamp", heriloomTable, 0, 200)
-            addRow("6/68/Wish", heriloomTable, 1, 200)
+            let heirloomTable = document.getElementById("mouse_heirloom_tbl")
+            addRow("d/db/Magic_Lamp", heirloomTable, 0, 200)
+            addRow("6/68/Wish", heirloomTable, 1, 200)
             document.getElementById("rules_clarification").innerHTML = "All players start with a Magic Lamp instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it, and use blank cards for Wishes (the Wish pile has 12 cards)."
+        case "f/f4/Pooka":
+            addRow("d/db/Cursed_Gold", document.getElementById("riverboat_heirloom_tbl"), 0, 200)
+            document.getElementById("rules_clarification").innerHTML = "All players start with a Cursed Gold instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
+        //TODO: Tormentor and Sacred Grove
     }
 }
 
@@ -112,7 +116,7 @@ function receiveBoons(n, deck, i){
         //display Will-o'-Wisp if relevant Boon revealed. Will stay out unless a new action card is chosen
         //(So that players can see the instructions for the rest of the game)
         if (deck[numBoons] === "c/ce/The_Swamp%27s_Gift"){
-            addRow("4/4f/Will-o'-Wisp", document.getElementById("heirloom_tbl"), 1, 200)
+            addRow("4/4f/Will-o'-Wisp", document.getElementById("mouse_heirloom_tbl"), 1, 200)
         }
     }
 

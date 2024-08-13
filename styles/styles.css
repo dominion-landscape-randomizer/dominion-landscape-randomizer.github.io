@@ -232,6 +232,12 @@ label[for="plunder_check"] {
     height: 21px;
     background-image: url("https://wiki.dominionstrategy.com/images/thumb/b/b8/Plunder_%28expansion%29_icon.png/20px-Plunder_%28expansion%29_icon.png");
 }
+label[for="rising_sun_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/5/5a/Rising_Sun_icon.png/20px-Rising_Sun_icon.png");
+}
 label[for="promo_check"] {
     display: inline-block;
     width: 16px;
