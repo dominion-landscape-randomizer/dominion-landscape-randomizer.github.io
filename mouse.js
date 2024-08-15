@@ -158,7 +158,6 @@ function mouseChooseAction() {
     let table = document.getElementById("mouse_tbl")
     addRow(imageURL, table, 0, 200);
 
-    console.log(document.getElementById("allies_check").checked)
     if (document.getElementById("allies_check").checked) {
         isLiaisonMouse(imageURL);
     }
@@ -169,7 +168,7 @@ function mouseChooseAction() {
 
     if (document.getElementById("renaissance_check").checked) {
         if (imageURL === "8/88/Border_Guard") {
-            addRow("b/b8/Lantern", document.getElementById("mouse_state_tbl"), 0, 320)
+            addRow("b/b8/Lantern", document.getElementById("mouse_artifact_tbl"), 0, 320)
             document.getElementById("mouse_rules_clarification").innerHTML = "The Horn is not shown, as it has no effect if a Command variant (like Mouse) plays Border Guard"
         }
     }
@@ -194,10 +193,16 @@ function mouseChooseAction() {
             document.getElementById("mouse_rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Embargo, therefore it cannot distribute tokens."
         }
     }
-        
+   
+    if (document.getElementById("adventures_check").checked) {
+        if (imageURL === "1/1d/Ratcatcher" || imageURL === "e/e1/Guide") {
+            document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse says \"leaving it there\", the Reserve card is never put on the Tavern Mat"
+        }
+    }
+    
     if (document.getElementById("empires_check").checked) {
         if (imageURL === "3/37/Farmers%27_Market") {
-            document.getElementById("mouse_rules_clarification").innerHTML = "As there is no Farmer's Market pile, it only give you +Buy."
+            document.getElementById("mouse_rules_clarification").innerHTML = "As there is no Farmer's Market pile, Way of the Mouse only give you +Buy."
         }
         else if (imageURL === "4/4e/Encampment") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so nothing is set aside and returned to its pile."

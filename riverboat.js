@@ -6,7 +6,7 @@ function addRiverboat() {
     let rbt = document.getElementById("riverboat_self_tbl")
     addRow("d/d8/Riverboat", rbt, 0, 200)
     showCards()
-    var x = document.getElementById("riverboat_div")
+    var x = document.getElementById("mouse_div")
     x.style.display = "block";
 }
 
@@ -161,10 +161,10 @@ function riverboatChooseAction() {
 
     if (document.getElementById("renaissance_check").checked) {
         if (imageURL === "8/87/Treasurer") {
-            addRow("e/ef/Key", document.getElementById("riverboat_state_tbl"), 0, 320)
+            addRow("e/ef/Key", document.getElementById("riverboat_artifact_tbl"), 0, 320)
         }
         else if (imageURL === "4/46/Swashbuckler") {
-            addRow("3/37/Treasure_Chest", document.getElementById("riverboat_state_tbl"), 0, 320)
+            addRow("3/37/Treasure_Chest", document.getElementById("riverboat_artifact_tbl"), 0, 320)
         }
     }
 
@@ -187,24 +187,6 @@ function riverboatChooseAction() {
     if (document.getElementById("cornucopia_check").checked) {
         if (imageURL === "b/b7/Joust") {
             document.getElementById("riverboat_rules_clarification").innerHTML = "Joust comes with a variety of Rewards. If you do not own Cornucopia & Guilds, you can see their wiki page and use different cards as stand-ins, or just choose a new Riverboat card."
-        }
-    }
-        
-    if (document.getElementById("empires_check").checked) {
-        if (imageURL === "3/37/Farmers%27_Market") {
-            document.getElementById("riverboat_rules_clarification").innerHTML = "As there is no Farmer's Market pile, it only give you +Buy."
-        }
-        else if (imageURL === "4/4e/Encampment") {
-            document.getElementById("riverboat_rules_clarification").innerHTML = "Command variants like Way of the Riverboat do not move the Encampment, so nothing is set aside and returned to its pile."
-        }
-    }
-
-    if (document.getElementById("plunder_check").checked) {
-        if (imageURL === "0/01/Search") {
-            document.getElementById("riverboat_rules_clarification").innerHTML = "The card you play as Riverboat will stay in play until a pile empties. It does not trash itself (instead it gets discarded), but you do gain a Loot."
-        }
-        else if (imageURL === "c/cc/Taskmaster") {
-            document.getElementById("riverboat_rules_clarification").innerHTML = "The card you play as Riverboat will stay in play as long as you keep gaining $5 cards, repeating Taskmaster's ability each turn."
         }
     }
 }
