@@ -3,13 +3,13 @@ function hideCards() {
     x.style.display = "none";
     hideBoon();
     //clear mouse and riverboat tables
-    document.getElementById("mouse_tbl").deleteRow(0)
-    document.getElementById("riverboat_tbl").deleteRow(0)
-    document.getElementById("mouse_heirloom_tbl").deleteRow(0)
-    document.getElementById("riverboat_heirloom_tbl").deleteRow(0)
-    document.getElementById("mouse_artifact_tbl").deleteRow(0)
-    document.getElementById("riverboat_artifact_tbl").deleteRow(0)
-    document.getElementById("riverboat_self_tbl").deleteRow(0)
+    document.getElementById("mouse_tbl").deleteRow(-1)
+    document.getElementById("riverboat_tbl").deleteRow(-1)
+    document.getElementById("mouse_heirloom_tbl").deleteRow(-1)
+    document.getElementById("riverboat_heirloom_tbl").deleteRow(-1)
+    document.getElementById("mouse_artifact_tbl").deleteRow(-1)
+    document.getElementById("riverboat_artifact_tbl").deleteRow(-1)
+    document.getElementById("riverboat_self_tbl").deleteRow(-1)
     document.getElementById("mouse_rules_clarification").innerHTML = ""
     document.getElementById("riverboat_rules_clarification").innerHTML = ""
 }
