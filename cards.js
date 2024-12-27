@@ -2,9 +2,10 @@ function hideCards() {
     var x = document.getElementById("card_div")
     x.style.display = "none";
     hideBoon();
-    //clear mouse and riverboat tables
+    //clear mouse, riverboat, and army tables
     document.getElementById("mouse_tbl").deleteRow(-1)
     document.getElementById("riverboat_tbl").deleteRow(-1)
+    document.getElementById("army_tbl").deleteRow(-1)
     document.getElementById("mouse_heirloom_tbl").deleteRow(-1)
     document.getElementById("riverboat_heirloom_tbl").deleteRow(-1)
     document.getElementById("mouse_artifact_tbl").deleteRow(-1)

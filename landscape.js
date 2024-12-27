@@ -233,7 +233,13 @@ function chooseProphecy(){
     let table = document.getElementById('prophecy_tbl')
     
     if (index < prophecyDefault.length){
-        addRow(prophecyDefault[index], table, 0, 320)
+        //check if Approaching Army
+        if (prophecyDefault[index] == "2/22/Approaching_Army"){
+            addArmy()
+        }
+        else{
+            addRow(prophecyDefault[index], table, 0, 320)
+        }
     }
     else{
         index -= prophecyDefault.length
@@ -407,8 +413,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("Expansion_Select").addEventListener('click', selectAll) 
     document.getElementById("Mouse_Randomize").addEventListener('click', mouseMakeActionList) 
     document.getElementById("Riverboat_Randomize").addEventListener('click', riverboatMakeActionList) 
+    document.getElementById("Army_Randomize").addEventListener('click', armyMakeList) 
     document.getElementById("Mouse_Add").addEventListener('click', addMouse) 
     document.getElementById("Riverboat_Add").addEventListener('click', addRiverboat) 
+    document.getElementById("Army_Add").addEventListener('click', addArmy)
     document.getElementById("Add_Ally").addEventListener('click', chooseAlly) 
     document.getElementById("Add_Prophecy").addEventListener('click', chooseProphecy) 
     document.getElementById("Remove_Ally").addEventListener('click', function(){
