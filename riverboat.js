@@ -120,7 +120,7 @@ function isOmen(imageURL) {
         if (imageURL === RisingSunOmen_5[i]) {
             //add message
             document.getElementById("riverboat_rules_clarification").innerHTML = `If you do not already have a Prophecy out, press the Prophecy button below to add one.
-            When on Omen is played, remove one token from the Prophecy. Put 5 tokens on the Prophecy for 2 players, 8 for 3 players, 10 for 4 players, 12 for 5 players, and 13 for 6 players.`
+            When an Omen is played, remove one token from the Prophecy. Put 5 tokens on the Prophecy for 2 players, 8 for 3 players, 10 for 4 players, 12 for 5 players, and 13 for 6 players.`
         }
     }
 }

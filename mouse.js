@@ -22,100 +22,97 @@ function mouseMakeActionList() {
     mouseActionCards = []
 
     if (document.getElementById("base_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Base_2).concat(Base_3)
+        mouseActionCards = mouseActionCards.concat(Base_Mouse)
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Base1E_2)
+            mouseActionCards = mouseActionCards.concat(Base1E_Mouse)
         }
     }
     if (document.getElementById("intrigue_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Intrigue_2).concat(Intrigue_3)
+        mouseActionCards = mouseActionCards.concat(Intrigue_Mouse)
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Intrigue1E_2).concat(Intrigue1E_3)
+            mouseActionCards = mouseActionCards.concat(Intrigue1E_Mouse)
         }
     }
     if (document.getElementById("seaside_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Seaside_2).concat(Seaside_3)
+        mouseActionCards = mouseActionCards.concat(Seaside_Mouse)
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Seaside1E_2).concat(Seaside1E_3)
+            mouseActionCards = mouseActionCards.concat(Seaside1E_Mouse)
         }
     }
     if (document.getElementById("alchemy_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Alchemy_2)
+        mouseActionCards = mouseActionCards.concat(Alchemy_Mouse)
     }
     if (document.getElementById("prosperity_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Prosperity_3)
+        mouseActionCards = mouseActionCards
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Prosperity1E_3)
+            mouseActionCards = mouseActionCards
         }
     }
     if (document.getElementById("cornucopia_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Cornucopia_2).concat(Cornucopia_3)
+        mouseActionCards = mouseActionCards.concat(Cornucopia_Mouse)
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Cornucopia1E_3)
+            mouseActionCards = mouseActionCards
         }
     }
     if (document.getElementById("guilds_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Guilds_2).concat(Guilds_3)
+        mouseActionCards = mouseActionCards.concat(Guilds_Mouse)
         if (document.getElementById("coffer_check").checked) {
-            mouseActionCards = mouseActionCards.concat(GuildsCoffers_2)
+            mouseActionCards = mouseActionCards.concat(GuildsCoffers_Mouse)
         }
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Guilds1E_2).concat(Guilds1E_3)
+            mouseActionCards = mouseActionCards.concat(Guilds1E_Mouse)
         }
     }
     if (document.getElementById("hinterlands_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Hinterlands_2).concat(Hinterlands_3)
+        mouseActionCards = mouseActionCards.concat(Hinterlands_Mouse)
         if (document.getElementById("1E_check").checked) {
-            mouseActionCards = mouseActionCards.concat(Hinterlands1E_2).concat(HinterlandsIE_3)
+            mouseActionCards = mouseActionCards.concat(Hinterlands1E_Mouse)
         }
     }
     if (document.getElementById("dark_ages_check").checked) {
-        mouseActionCards = mouseActionCards.concat(DarkAges_2).concat(DarkAges_3)
+        mouseActionCards = mouseActionCards.concat(DarkAges_Mouse)
     }
     if (document.getElementById("adventures_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Adventures_2).concat(Adventures_3)
+        mouseActionCards = mouseActionCards.concat(Adventures_Mouse)
     }
     if (document.getElementById("empires_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Empires_2).concat(Empires_3)
+        mouseActionCards = mouseActionCards.concat(Empires_Mouse)
         if (document.getElementById("victory_check").checked) {
-            mouseActionCards = mouseActionCards.concat(EmpiresVP_3)
+            mouseActionCards = mouseActionCards.concat(EmpiresVP_Mouse)
         }
     }
     if (document.getElementById("nocturne_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Nocturne_2).concat(Nocturne_3)
+        mouseActionCards = mouseActionCards.concat(Nocturne_Mouse)
     }
     if (document.getElementById("renaissance_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Renaissance_2).concat(Renaissance_3)
+        mouseActionCards = mouseActionCards.concat(Renaissance_Mouse)
         if (document.getElementById("coffer_check").checked) {
-            mouseActionCards = mouseActionCards.concat(RenaissanceCoffers_3)
+            mouseActionCards = mouseActionCards.concat(RenaissanceCoffers_Mouse)
         }
     }
     if (document.getElementById("menagerie_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Menagerie_2).concat(Menagerie_3)
+        mouseActionCards = mouseActionCards.concat(Menagerie_Mouse)
         if (document.getElementById("exile_check").checked) {
-            mouseActionCards = mouseActionCards.concat(MenagerieExile_3)
+            mouseActionCards = mouseActionCards.concat(MenagerieExile_Mouse)
         }
         if (document.getElementById("horse_check").checked) {
-            mouseActionCards = mouseActionCards.concat(MenagerieHorse_2).concat(MenagerieHorse_3)
+            mouseActionCards = mouseActionCards.concat(MenagerieHorse_Mouse)
         }
     }
     if (document.getElementById("allies_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Allies_2).concat(Allies_3).concat(AlliesLiaison_3).concat(AlliesLiaison_2)
+        mouseActionCards = mouseActionCards.concat(Allies_Mouse).concat(AlliesLiaison_Mouse).concat(AlliesLiaison_Mouse)
     }
     if (document.getElementById("plunder_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Plunder_2).concat(Plunder_3)
-        if (document.getElementById("loot_check").checked) {
-            mouseActionCards = mouseActionCards.concat(PlunderLoot_2)
-        }
+        mouseActionCards = mouseActionCards.concat(Plunder_Mouse)
     }
     if (document.getElementById("rising_sun_check").checked) {
-        mouseActionCards = mouseActionCards.concat(RisingSun_2).concat(RisingSun_3)
+        mouseActionCards = mouseActionCards.concat(RisingSun_Mouse)
         if (document.getElementById("debt_check").checked) {
-            mouseActionCards = mouseActionCards.concat(RisingSunDebt_3)
+            mouseActionCards = mouseActionCards.concat(RisingSunDebt_Mouse)
         }
     }
     if (document.getElementById("promo_check").checked) {
-        mouseActionCards = mouseActionCards.concat(Promo_3)
+        mouseActionCards = mouseActionCards.concat(Promo_Mouse)
     }
 
     if (mouseActionCards.length > 0) { mouseChooseAction() }
@@ -124,13 +121,8 @@ function mouseMakeActionList() {
 
 function isLiaisonMouse(imageURL) {
     //check if chosen card is a liaison
-    if (imageURL === "4/4b/Sycophant"){
-        document.getElementById("mouse_rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.
-        If you do not already have an Ally out, press the Ally button below to add one.`
-        return;
-    }
-    for (i in AlliesLiaison_3) {
-        if (imageURL === AlliesLiaison_3[i]) {
+    for (i in AlliesLiaison_Mouse) {
+        if (imageURL === AlliesLiaison_Mouse[i]) {
             //add message
             if (i === 2){ //Ally is Student
                 document.getElementById("mouse_rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.
@@ -206,15 +198,6 @@ function mouseChooseAction() {
         }
         else if (imageURL === "4/4e/Encampment") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so nothing is set aside and returned to its pile."
-        }
-    }
-
-    if (document.getElementById("plunder_check").checked) {
-        if (imageURL === "0/01/Search") {
-            document.getElementById("mouse_rules_clarification").innerHTML = "The card you play as Mouse will stay in play until a pile empties. It does not trash itself (instead it gets discarded), but you do gain a Loot."
-        }
-        else if (imageURL === "c/cc/Taskmaster") {
-            document.getElementById("mouse_rules_clarification").innerHTML = "The card you play as Mouse will stay in play as long as you keep gaining $2 cards, repeating Taskmaster's ability each turn."
         }
     }
 }
