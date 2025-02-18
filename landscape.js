@@ -25,17 +25,19 @@ function addRow(imageURL, table, index, width) {
         let contentrow = document.createElement('tr')
         let imageElement = document.createElement('img')
         contentrow.appendChild(imageElement)
-        imageElement.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`
+        imageElement.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`
+        imageElement.width = width
+        
         table.appendChild(contentrow)        
     }
     //overwrites a row if it already exists
     else{
         //preload the image before changing
         const preloadedImage = new Image()
-        preloadedImage.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`
+        preloadedImage.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`
         preloadedImage.onload = function(){
             var image = table.rows[index].children[0]
-            image.src = `https://wiki.dominionstrategy.com/images/thumb/${imageURL}.jpg/${width}px-${imageURL.slice(5)}.jpg`          
+            image.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`          
             }
         }
 }
@@ -177,11 +179,11 @@ function randomCards(n){
         if (required[cards[index].getType()] > 0) required[cards[index].getType()]--
         if (allowed[cards[index].getType()] > 0) allowed[cards[index].getType()]--
         //display the trait selector if the card is a trait or Obelisk
-        if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "c/c6/Obelisk")){
+        if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "Obelisk")){
             showTrait()
         }
         //displays the mouse randomizer if the card is Way of the Mouse
-        else if (cards[index].getURL() === "2/29/Way_of_the_Mouse"){
+        else if (cards[index].getURL() === "Way_of_the_Mouse"){
             showCards()
         }
         cardsToAdd.push(cards[index])
@@ -234,7 +236,7 @@ function chooseProphecy(){
     
     if (index < prophecyDefault.length){
         //check if Approaching Army
-        if (prophecyDefault[index] == "2/22/Approaching_Army"){
+        if (prophecyDefault[index] == "Approaching_Army"){
             addArmy()
         }
         else{

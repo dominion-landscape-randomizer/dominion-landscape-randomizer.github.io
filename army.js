@@ -4,7 +4,7 @@ var armyCards = []
 function addArmy() {
     //display Approaching Army in Prophecies
     let prop = document.getElementById('prophecy_tbl')
-    addRow("2/22/Approaching_Army", prop, 0, 320)
+    addRow("Approaching_Army", prop, 0, 320)
     showCards()
     var x = document.getElementById("mouse_div")
     x.style.display = "block";
@@ -91,9 +91,9 @@ function armyMakeList() {
     if (document.getElementById("rising_sun_check").checked) {
         armyCards = armyCards.concat(RisingSun_Attack).concat(RisingSunOmen_Attack)
     }
-    if (document.getElementById("promo_check").checked) {
-        armyCards = armyCards.concat(Promo_Attack)
-    }
+    //if (document.getElementById("promo_check").checked) {
+    //    armyCards = armyCards.concat(Promo_Attack)
+    //}
 
     if (armyCards.length > 0) { armyChooseAction() }
     else { alert("Riverboat cannot choose a card, as no expansions have been selected") }

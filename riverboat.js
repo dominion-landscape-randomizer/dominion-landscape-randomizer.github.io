@@ -4,7 +4,7 @@ var riverboatActionCards = []
 function addRiverboat() {
     //display riverboat in it's spot
     let rbt = document.getElementById("riverboat_self_tbl")
-    addRow("d/d8/Riverboat", rbt, 0, 200)
+    addRow("Riverboat", rbt, 0, 200)
     showCards()
     var x = document.getElementById("mouse_div")
     x.style.display = "block";
@@ -160,32 +160,32 @@ function riverboatChooseAction() {
     }
 
     if (document.getElementById("renaissance_check").checked) {
-        if (imageURL === "8/87/Treasurer") {
-            addRow("e/ef/Key", document.getElementById("riverboat_artifact_tbl"), 0, 320)
+        if (imageURL === "Treasurer") {
+            addRow("Key", document.getElementById("riverboat_artifact_tbl"), 0, 320)
         }
-        else if (imageURL === "4/46/Swashbuckler") {
-            addRow("3/37/Treasure_Chest", document.getElementById("riverboat_artifact_tbl"), 0, 320)
+        else if (imageURL === "Swashbuckler") {
+            addRow("Treasure_Chest", document.getElementById("riverboat_artifact_tbl"), 0, 320)
         }
     }
 
     if (document.getElementById("dark_ages_check").checked) {
-        if (imageURL === "9/9a/Knights") {
+        if (imageURL === "Knights") {
             isKnights()
         }
-        else if (imageURL === "4/43/Bandit_Camp") {
+        else if (imageURL === "Bandit_Camp") {
             document.getElementById("riverboat_rules_clarification").innerHTML = "If you don't have Dark Ages, you can use some other card (eg. blanks) as a stand-in for Spoils"
-            addRow("9/9f/Spoils", document.getElementById("riverboat_heirloom_tbl"), 0, 200)
+            addRow("Spoils", document.getElementById("riverboat_heirloom_tbl"), 0, 200)
         }
     }
     
     if (document.getElementById("adventures_check").checked) {
-        if (imageURL === "c/cf/Royal_Carriage" || imageURL === "b/b2/Wine_Merchant") {
+        if (imageURL === "Royal_Carriage" || imageURL === "Wine_Merchant") {
             document.getElementById("riverboat_rules_clarification").innerHTML = "As Riverboat says \"leaving it there\", the Reserve card is never put on the Tavern Mat"
         }
     }
     
     if (document.getElementById("cornucopia_check").checked) {
-        if (imageURL === "b/b7/Joust") {
+        if (imageURL === "Joust") {
             document.getElementById("riverboat_rules_clarification").innerHTML = "Joust comes with a variety of Rewards. If you do not own Cornucopia & Guilds, you can see their wiki page and use different cards as stand-ins, or just choose a new Riverboat card."
         }
     }

@@ -4,14 +4,14 @@ var mouseActionCards = []
 function addMouse() {
     //check if mouse is already there
     for (c in cardsToAdd) {
-        if (cardsToAdd[c].getURL() === "2/29/Way_of_the_Mouse") {
+        if (cardsToAdd[c].getURL() === "Way_of_the_Mouse") {
             return;
         }
     }
     //if not, add it to the end
     let table = document.getElementById('card_tbl')
-    addRow("2/29/Way_of_the_Mouse", table, cardsToAdd.length, 320)
-    cardsToAdd.push(new cardShapedThing("2/29/Way_of_the_Mouse", cardType.WAY))
+    addRow("Way_of_the_Mouse", table, cardsToAdd.length, 320)
+    cardsToAdd.push(new cardShapedThing("Way_of_the_Mouse", cardType.WAY))
     showCards()
 }
 
@@ -138,7 +138,7 @@ function isLiaisonMouse(imageURL) {
         }
     }
     //only reached if the card is not a Liaison
-    if (imageURL === "c/c3/Merchant_Camp" || imageURL === "c/c9/Tent"){
+    if (imageURL === "Merchant_Camp" || imageURL === "Tent"){
         document.getElementById("mouse_rules_clarification").innerHTML = "You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside card"
     }
 }
@@ -159,44 +159,44 @@ function mouseChooseAction() {
     }
 
     if (document.getElementById("renaissance_check").checked) {
-        if (imageURL === "8/88/Border_Guard") {
-            addRow("b/b8/Lantern", document.getElementById("mouse_artifact_tbl"), 0, 320)
+        if (imageURL === "Border_Guard") {
+            addRow("Lantern", document.getElementById("mouse_artifact_tbl"), 0, 320)
             document.getElementById("mouse_rules_clarification").innerHTML = "The Horn is not shown, as it has no effect if a Command variant (like Mouse) plays Border Guard"
         }
     }
 
     if (document.getElementById("dark_ages_check").checked) {
-        if (imageURL === "8/8e/Hermit") {
+        if (imageURL === "Hermit") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts Hermit in play, it is never discarded from play, and thus cannot gain a Madman"
         }
-        else if (imageURL === "7/74/Urchin") {
+        else if (imageURL === "Urchin") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts Urchin in play, it cannot gain a Mercenary"
         }
     }
     
     if (document.getElementById("adventures_check").checked) {
-        if (imageURL === "6/60/Page" || imageURL === "7/70/Peasant") {
+        if (imageURL === "Page" || imageURL === "Peasant") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts the Traveller into play, it is never discarded from play, and thus cannot be exchanged"
         }
     }
 
     if (document.getElementById("1E_check").checked) {
-        if (imageURL === "f/fb/Embargo") {
+        if (imageURL === "Embargo") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Embargo, therefore it cannot distribute tokens."
         }
     }
    
     if (document.getElementById("adventures_check").checked) {
-        if (imageURL === "1/1d/Ratcatcher" || imageURL === "e/e1/Guide") {
+        if (imageURL === "Ratcatcher" || imageURL === "Guide") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse says \"leaving it there\", the Reserve card is never put on the Tavern Mat"
         }
     }
     
     if (document.getElementById("empires_check").checked) {
-        if (imageURL === "3/37/Farmers%27_Market") {
+        if (imageURL === "Farmers%27_Market") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As there is no Farmer's Market pile, Way of the Mouse only give you +Buy."
         }
-        else if (imageURL === "4/4e/Encampment") {
+        else if (imageURL === "Encampment") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so nothing is set aside and returned to its pile."
         }
     }
