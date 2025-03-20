@@ -45,8 +45,8 @@ function armyMakeList() {
     }
     if (document.getElementById("guilds_check").checked) {
         armyCards = armyCards.concat(Guilds_Attack)
-        if (document.getElementById("coffer_check").checked) {
-            armyCards = armyCards.concat(GuildsCoffers_Attack)
+        if (document.getElementById("1E_check").checked) {
+            armyCards = armyCards.concat(Guilds1E_Attack)
         }
     }
     if (document.getElementById("hinterlands_check").checked) {
@@ -96,7 +96,7 @@ function armyMakeList() {
     //}
 
     if (armyCards.length > 0) { armyChooseAction() }
-    else { alert("Riverboat cannot choose a card, as no expansions have been selected") }
+    else { alert("Approaching Army cannot choose a card, as no expansions have been selected") }
 }
 
 function armyChooseAction() {
