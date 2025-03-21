@@ -124,10 +124,9 @@ function isLiaisonMouse(imageURL) {
     for (i in AlliesLiaison_Mouse) {
         if (imageURL === AlliesLiaison_Mouse[i]) {
             //add message
-            if (i === 2){ //Ally is Student
+            if (imageURL === "Student"){ //Ally is Student
                 document.getElementById("mouse_rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.
-                If you do not already have an Ally out, press the Ally button below to add one.
-                You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside Student`
+                If you do not already have an Ally out, press the Ally button below to add one. You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside Student`
                 return;
             }
             else{
@@ -149,6 +148,7 @@ function mouseChooseAction() {
     let imageURL = mouseActionCards[index]
     let table = document.getElementById("mouse_tbl")
     addRow(imageURL, table, 0, 200);
+    document.getElementById("mouse_rules_clarification").innerHTML = ``;
 
     if (document.getElementById("allies_check").checked) {
         isLiaisonMouse(imageURL);

@@ -138,6 +138,7 @@ function riverboatChooseAction() {
     let imageURL = riverboatActionCards[index]
     let table = document.getElementById("riverboat_tbl")
     addRow(imageURL, table, 0, 200);
+    document.getElementById("riverboat_rules_clarification").innerHTML = ``;
 
 
     if (document.getElementById("allies_check").checked) {
