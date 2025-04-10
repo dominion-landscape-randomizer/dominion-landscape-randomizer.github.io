@@ -1,0 +1,272 @@
+/* Your styles go in this file */
+
+html {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #bbbcbcff;
+    font-variant: small-caps;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.table-container { 
+    display: flex; 
+    justify-content: start; 
+    margin: auto; 
+} 
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+.image-back {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+.image-front {
+    position: absolute;
+    top: 36px;
+    left: 5px;
+    border: 1px solid #000000;
+    width:90px;
+  }
+
+#recipes {
+    text-align: justify;
+}
+
+.recipe {
+    width: 30%;
+    display: inline-block;
+    border: 1px solid grey;
+    margin: 15px;
+}
+
+.recipe img {
+    width: 100%;
+    height: 300px;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+p {
+    line-height: 1.2;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-align: left;
+  }
+
+button {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    height: 30px;
+    color: black;
+    background-color: Transparent;
+    outline:none;
+    border:none;
+    font-family: 'Roboto', sans-serif;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 0;
+    text-align: right;
+}
+
+td {
+    border: 1px solid black;
+    padding: 0 5px;
+    width: max-content;
+}
+
+input {
+    margin-top: 0%;
+    height: 2%;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 5px;
+    width: 20px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+
+textarea {
+    font-size:60px;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+.button-group {
+    display: flex;
+    display: inline-block;
+}
+
+.inline-button {
+    margin-top: -50px;
+    margin-bottom: -50px;
+    font-size: smaller;
+    line-height: inherit;
+    height:min-content;
+    display:inline-block;
+    vertical-align: middle;
+    height:0%;
+    padding:0% 0%;
+}
+
+.component-checkboxes{
+    font-size:medium;
+}
+
+.visible-button{
+    background-color: white;
+    outline:white;
+    border:black;    
+}
+
+label[for="base_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 14px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/b/b0/Dominion_icon.png/20px-Dominion_icon.png");
+}
+label[for="intrigue_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/c/cf/Intrigue_icon.png/20px-Intrigue_icon.png");
+}
+label[for="seaside_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 26px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/c/c5/Seaside_icon.png/20px-Seaside_icon.png");
+}
+label[for="alchemy_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 34px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/6/6a/Alchemy_icon.png/20px-Alchemy_icon.png");
+}
+label[for="prosperity_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/f/fb/Prosperity_icon.png/20px-Prosperity_icon.png");
+}
+label[for="cornucopia_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/20/Cornucopia_icon.png/20px-Cornucopia_icon.png");
+}
+label[for="hinterlands_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 16px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/28/Hinterlands_icon.png/20px-Hinterlands_icon.png");
+}
+label[for="dark_ages_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/1/1b/Dark_Ages_icon.png/20px-Dark_Ages_icon.png");
+}
+label[for="guilds_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/3/36/Guilds_icon.png/20px-Guilds_icon.png");
+}
+label[for="adventures_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/5/5e/Adventures_icon.png/20px-Adventures_icon.png");
+}
+label[for="empires_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 24px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/2/2a/Empires_icon.png/20px-Empires_icon.png");
+}
+label[for="nocturne_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/a/aa/Nocturne_icon.png/20px-Nocturne_icon.png");
+}
+label[for="renaissance_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/4/4c/Renaissance_icon.png/20px-Renaissance_icon.png");
+}
+label[for="menagerie_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/d/d4/Menagerie_%28expansion%29_icon.png/20px-Menagerie_%28expansion%29_icon.png");
+}
+label[for="allies_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/3/3d/Allies_icon.png/20px-Allies_icon.png");
+}
+label[for="plunder_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/b/b8/Plunder_%28expansion%29_icon.png/20px-Plunder_%28expansion%29_icon.png");
+}
+label[for="rising_sun_check"] {
+    display: inline-block;
+    width: 20px;
+    height: 21px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/5/5a/Rising_Sun_icon.png/20px-Rising_Sun_icon.png");
+}
+label[for="promo_check"] {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("https://wiki.dominionstrategy.com/images/thumb/a/a0/Promo_icon.png/16px-Promo_icon.png");
+}
