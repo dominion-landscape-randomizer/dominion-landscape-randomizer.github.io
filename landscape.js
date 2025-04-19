@@ -106,36 +106,51 @@ function makeList(type,n){
             }
         }
     }
-    if (type.includes('Event') && !(document.getElementById("rs_check").checked)){
-        cards = cards.concat(eventsDefault).concat(rsEventsDefault)
-        if (document.getElementById("debt_check").checked){
-            cards = cards.concat(eventsDebt).concat(rsEventsDebt)
-            if (document.getElementById("victory_check").checked){
-                cards = cards.concat(eventsDebtVictory)
+    if (type.includes('Event')){
+        if (document.getElementById("av_check").checked){
+            cards = cards.concat(avEventsDefault)
+            if (document.getElementById("adventures_token_check").checked){
+                cards = cards.concat(eventsAdventures)
             }
         }
-        if (document.getElementById("horse_check").checked){
-            cards = cards.concat(eventsHorses)
+        if (document.getElementById("em_check").checked){
+            cards = cards.concat(emEventsDefault)
+            if (document.getElementById("debt_check").checked){
+                cards = cards.concat(emEventsDebt)
+                if (document.getElementById("victory_check").checked){
+                    cards = cards.concat(eventsDebtVictory)
+                }
+            }
+            if (document.getElementById("victory_check").checked){
+                cards = cards.concat(eventsVictory)
+            }
         }
-        if (document.getElementById("adventures_token_check").checked){
-            cards = cards.concat(eventsAdventures)
+        if (document.getElementById("mg_check").checked){
+            cards = cards.concat(mgEventsDefault)
+            if (document.getElementById("horse_check").checked){
+                cards = cards.concat(eventsHorses)
+            }
+            if (document.getElementById("exile_check").checked){
+                cards = cards.concat(eventsExile)
+            }
         }
-        if (document.getElementById("loot_check").checked){
-            cards = cards.concat(eventsLoot)
+        if (document.getElementById("pl_check").checked){
+            cards = cards.concat(plEventsDefault)
+            if (document.getElementById("loot_check").checked){
+                cards = cards.concat(eventsLoot)
+            }
         }
-        if (document.getElementById("victory_check").checked){
-            cards = cards.concat(eventsVictory)
+        if (document.getElementById("rs_check").checked){
+            cards = cards.concat(rsEventsDefault)
+            if (document.getElementById("debt_check").checked){
+                cards = cards.concat(rsEventsDebt)
+            }
         }
-        if (document.getElementById("exile_check").checked){
-            cards = cards.concat(eventsExile)
+        if (document.getElementById("pr_check").checked){
+            cards = cards.concat(promoEvents)
         }
     }
-    if (type.includes('Event') && (document.getElementById("rs_check").checked)){
-        cards = cards.concat(rsEventsDefault)
-        if (document.getElementById("debt_check").checked){
-            cards = cards.concat(rsEventsDebt)
-        }
-    }
+
     if (cards.length > 0) randomCards(n)
 }
 
@@ -416,6 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("Mouse_Randomize").addEventListener('click', mouseMakeActionList) 
     document.getElementById("Riverboat_Randomize").addEventListener('click', riverboatMakeActionList) 
     document.getElementById("Army_Randomize").addEventListener('click', armyMakeList) 
+    document.getElementById("Trait_Add").addEventListener('click', showTrait) 
     document.getElementById("Mouse_Add").addEventListener('click', addMouse) 
     document.getElementById("Riverboat_Add").addEventListener('click', addRiverboat) 
     document.getElementById("Army_Add").addEventListener('click', addArmy)

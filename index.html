@@ -13,6 +13,7 @@
 <body>
     <div class="header"><span class="visible-button"><button id="about_Button" style="margin-bottom: 10px;">About Page</button></span></div>
     <div class="container">
+        <span class="visible-button"><button id="Trait_Add" style="margin-bottom: 10px;">Trait Selector</button></span>
         <span class="visible-button"><button id="Mouse_Add" style="margin-bottom: 10px;">Way of the Mouse Randomizer</button></span>
         <span class="visible-button"><button id="Riverboat_Add" style="margin-bottom: 10px;">Riverboat Randomizer</button></span>
         <span class="visible-button"><button id="Army_Add" style="margin-bottom: 10px;">Approaching Army Randomizer</button></span><br>
@@ -22,7 +23,7 @@
                 <div class="button-group"><button id="Trait_down_button" style="margin-bottom: 10px;">⬇️</button><input
                         type="number" , value='10' , min='0' , id='Trait_count'><button id="Trait_up_button"
                         style="margin-bottom: 10px;">⬆️</button></div><br>
-                <span class="visible-button"><button id="Trait_Randomize" style="margin-bottom: 10px;">Select
+                <span class="visible-button"><button id="Trait_Randomize" style="margin-bottom: 10px;">Select Trait
                         Card</button></span><br>
                 <textarea id="Trait_index" rows="1" cols="2" readonly placeholder=""></textarea>
             </div>
@@ -184,13 +185,12 @@
         Total Cards <div class="button-group"><button id="Total_down_button"
                 style="margin-bottom: 10px;">⬇️</button><input type="number" , value='2' , min='0' ,
                 id='Total_count'><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
-        <span class="visible-button"><button id="submit_button" style="margin-bottom: 10px;">Randomize</button></span>
+        <span class="visible-button"><button id="submit_button" style="margin-bottom: 10px;">Generate Landscapes</button></span>
         <div class="type-select">
             <table>
                 <tr>
                     <td>
                         <p><b>Events</b></p>
-                        <input type="checkbox" , id='rs_check'></input> Rising Sun Only<br>
                         Minimum: <div class="button-group"><button id="Event_min_down_button"
                                 style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
                                 id='Event_min'><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button>
@@ -200,6 +200,17 @@
                                 id='Event_max'><button id="Event_max_up_button" style="margin-bottom: 10px;">⬆️</button>
                         </div>
                     </td>
+                    <td>
+                        <p><b>Events Expansions</b></p>
+                        <input type="checkbox" , id='av_check'></input> <label for="adventures_check"></label>
+                        <input type="checkbox" , id='em_check'></input> <label for="empires_check"></label>
+                        <input type="checkbox" , id='mg_check'></input> <label for="menagerie_check"></label><br>
+                        <input type="checkbox" , id='pl_check'></input> <label for="plunder_check"></label>
+                        <input type="checkbox" , id='rs_check'></input> <label for="rising_sun_check"></label>
+                        <input type="checkbox" , id='pr_check'></input> <label for="promo_check"></label><br>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <p><b>Landmarks</b></p>
                         Minimum: <div class="button-group"><button id="Landmark_min_down_button"
@@ -211,8 +222,6 @@
                                 id='Landmark_max'><button id="Landmark_max_up_button"
                                 style="margin-bottom: 10px;">⬆️</button></div>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <p><b>Projects</b></p>
                         Minimum: <div class="button-group"><button id="Project_min_down_button"
@@ -223,17 +232,6 @@
                                 style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
                                 id='Project_max'><button id="Project_max_up_button"
                                 style="margin-bottom: 10px;">⬆️</button></div>
-                    </td>
-                    <td>
-                        <p><b>Ways</b></p>
-                        Minimum: <div class="button-group"><button id="Way_min_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Way_min'><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button>
-                        </div><br>
-                        Maximum: <div class="button-group"><button id="Way_max_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Way_max'><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button>
-                        </div>
                     </td>
                 </tr>
                 <td>
@@ -246,6 +244,17 @@
                             style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
                             id='Trait_max'><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button>
                     </div>
+                    <td>
+                        <p><b>Ways</b></p>
+                        Minimum: <div class="button-group"><button id="Way_min_down_button"
+                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
+                                id='Way_min'><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button>
+                        </div><br>
+                        Maximum: <div class="button-group"><button id="Way_max_down_button"
+                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
+                                id='Way_max'><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button>
+                        </div>
+                    </td>
                 </td>
                 </tr>
             </table>
