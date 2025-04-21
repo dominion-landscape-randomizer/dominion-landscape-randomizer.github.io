@@ -22,7 +22,7 @@ class cardShapedThing{
 }
 
 const types = ['Event','Landmark','Project','Way','Trait']
-const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check']
+const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check','av_check','em_check','mg_check','pl_check','rs_check','pr_check']
 const counters = ['Total_count', 'Event_min', 'Event_max', 'Landmark_min', 'Landmark_max', 'Project_min', 'Project_max', 'Way_min', 'Way_max', 'Trait_min', 'Trait_max', 'Ally_min', 'Ally_max']
 
 //Constant arrays containing objects of each card
@@ -154,9 +154,10 @@ const Renaissance_Attack = ["Old_Witch","Villain"]
 const Menagerie_Attack = ["Black_Cat","Cardinal","Coven","Gatekeeper"]
 const Allies_Attack = ["Barbarian","Highwayman","Skirmisher"]
 const Plunder_Attack = ["Siren","Cutthroat","Frigate","Trickster"]
-const RisingSun_Attack = ["Snake_Witch","Ninja","Samurai","Kitsune"]
+const RisingSun_Attack = ["Snake_Witch","Ninja","Samurai"]
+const RisingSunOmen_Attack = ["Kitsune"]
 
-//$2 and $3 Kingdom piles (for Bane)
+//$2 and $3 Kingdom Piles (For Ferryman)
 const Base_Bane = ["Merchant","Harbinger","Vassal","Moat","Village","Cellar","Workshop","Chapel"]
 const Base1E_Bane = ["Chancellor","Woodcutter"]
 const Intrigue_Bane = ["Lurker","Shanty Town","Courtyard","Masquerade","Steward","Swindler","Wishing Well","Pawn"]
@@ -183,7 +184,7 @@ const Plunder_Bane = ["Jewelled Egg","Cage","Secluded Shrine","Grotto","Search",
 const RisingSun_Bane = ["Root Cellar","Snake Witch","Riverboat","Fishmonger","Craftsman","Aristocrat"]
 const Promo_Bane = ["Black Market","Church"]
 
-//$3 and $4 kingdom piles (for Ferryman)
+//$3 and $4 piles (for Ferryman)
 const Base_Ferryman = ["Poacher","Harbinger","Merchant","Vassal","Smithy","Workshop","Village","Throne Room","Remodel","Bureaucrat","Gardens","Militia","Moneylender"]
 const Base1E_Ferryman = ["Feast","Spy","Chancellor","Woodcutter","Thief"]
 const Intrigue_Ferryman = ["Secret Passage","Diplomat","Mill","Shanty Town","Baron","Bridge","Conspirator","Ironworks","Masquerade","Mining Village","Wishing Well","Swindler","Steward"]
