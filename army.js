@@ -59,9 +59,6 @@ function armyMakeList() {
     }
     if (document.getElementById("adventures_check").checked) {
         armyCards = armyCards.concat(Adventures_Attack)
-        if (document.getElementById("adventures_token_check").checked) {
-            armyCards = armyCards.concat(AdventuresTokens_Attack)
-        }
     }
     if (document.getElementById("empires_check").checked) {
         armyCards = armyCards.concat(Empires_Attack)
@@ -71,15 +68,9 @@ function armyMakeList() {
     }
     if (document.getElementById("renaissance_check").checked) {
         armyCards = armyCards.concat(Renaissance_Attack)
-        if (document.getElementById("coffer_check").checked) {
-            armyCards = armyCards.concat(RenaissanceCoffers_Attack)
-        }
     }
     if (document.getElementById("menagerie_check").checked) {
         armyCards = armyCards.concat(Menagerie_Attack)
-        if (document.getElementById("exile_check").checked) {
-            armyCards = armyCards.concat(MenagerieExile_Attack)
-        }
     }
     if (document.getElementById("allies_check").checked) {
         armyCards = armyCards.concat(Allies_Attack)
@@ -88,7 +79,7 @@ function armyMakeList() {
         armyCards = armyCards.concat(Plunder_Attack)
     }
     if (document.getElementById("rising_sun_check").checked) {
-        armyCards = armyCards.concat(RisingSun_Attack).concat(RisingSunOmen_Attack)
+        armyCards = armyCards.concat(RisingSun_Attack)
     }
     //if (document.getElementById("promo_check").checked) {
     //    armyCards = armyCards.concat(Promo_Attack)

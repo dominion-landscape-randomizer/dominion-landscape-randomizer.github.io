@@ -6,17 +6,25 @@ function hideCards() {
     document.getElementById("mouse_parent").style.display = "none"
     document.getElementById("riverboat_parent").style.display = "none"
     document.getElementById("army_parent").style.display = "none"
+    document.getElementById("bane_parent").style.display = "none"
+    document.getElementById("ferryman_parent").style.display = "none"
     document.getElementById("mouse_card").src=""
     document.getElementById("riverboat_card").src=""
     document.getElementById("army_card").src=""
+    document.getElementById("bane_card").src=""
+    document.getElementById("riverboat_card").src=""
     document.getElementById("mouse_icon").style.display = "none"
     document.getElementById("riverboat_icon").style.display = "none"
     document.getElementById("army_icon").style.display = "none"
+    document.getElementById("bane_icon").style.display = "none"
+    document.getElementById("ferryman_icon").style.display = "none"
     document.getElementById("mouse_heirloom_tbl").deleteRow(-1)
     document.getElementById("riverboat_heirloom_tbl").deleteRow(-1)
     document.getElementById("mouse_artifact_tbl").deleteRow(-1)
     document.getElementById("riverboat_artifact_tbl").deleteRow(-1)
     document.getElementById("riverboat_self_tbl").deleteRow(-1)
+    document.getElementById("yw_self_tbl").deleteRow(-1)
+    document.getElementById("ferryman_self_tbl").deleteRow(-1)
     document.getElementById("mouse_rules_clarification").innerHTML = ""
     document.getElementById("riverboat_rules_clarification").innerHTML = ""
 }

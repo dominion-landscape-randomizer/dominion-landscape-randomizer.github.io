@@ -16,7 +16,9 @@
         <span class="visible-button"><button id="Trait_Add" style="margin-bottom: 10px;">Trait Selector</button></span>
         <span class="visible-button"><button id="Mouse_Add" style="margin-bottom: 10px;">Way of the Mouse Randomizer</button></span>
         <span class="visible-button"><button id="Riverboat_Add" style="margin-bottom: 10px;">Riverboat Randomizer</button></span>
-        <span class="visible-button"><button id="Army_Add" style="margin-bottom: 10px;">Approaching Army Randomizer</button></span><br>
+        <span class="visible-button"><button id="Army_Add" style="margin-bottom: 10px;">Approaching Army Randomizer</button></span>
+        <span class="visible-button"><button id="Bane_Add" style="margin-bottom: 10px;">Bane Randomizer</button></span>
+        <span class="visible-button"><button id="Ferryman_Add" style="margin-bottom: 10px;">Ferryman Randomizer</button></span><br>
         <div id="landscape_div">
             <div id="trait_div">
                 Number of Cards Eligible for Trait <button id="Trait_?" style="margin-bottom: 10px;">⍰</button>
@@ -49,6 +51,14 @@
                           <img class="image-back" id="army_card" />
                           <img class="image-front" src="img/AA.png" id="army_icon"/>
                         </div>
+                    <div class="parent" id="bane_parent">
+                          <img class="image-back" id="bane_card" />
+                          <img class="image-front" src="img/YW.png" id="bane_icon"/>
+                        </div>
+                    <div class="parent" id="ferryman_parent">
+                          <img class="image-back" id="ferryman_card" />
+                          <img class="image-front" src="img/Ferryman.png" id="ferryman_icon"/>
+                        </div>
                 </div>
                 <div id ="mouse_heirloom_div">
                     <div class="table-container">
@@ -68,7 +78,9 @@
                 </div>
                 <p id = "mouse_rules_clarification" style ="font-variant: normal; margin-top: 0%; margin-bottom: 0%;"></p>
                 <p id = "riverboat_rules_clarification" style ="font-variant: normal; margin-top: 0%; margin-bottom: 0%;"></p>
-                <table id="riverboat_self_tbl"></table>
+                <div class="table-container">
+                    <table id="riverboat_self_tbl"></table><table id="yw_self_tbl"></table><table id="ferryman_self_tbl"></table>
+                </div>
             </div>
             <div class="expansion-buttons">
                 <table id="expansion_tbl">
@@ -157,9 +169,11 @@
                 </table>
             <span class="visible-button"><button id="Expansion_Select" style="margin-bottom: 10px;">Select All Expansions</button></span><br>
             <input type="checkbox" , id='1E_check'></input> Include removed 1E cards<br>
-            <span class="visible-button"><button id="Mouse_Randomize" style="margin-bottom: 10px;">Generate Mouse Card</button></span>
-            <span class="visible-button"><button id="Riverboat_Randomize" style="margin-bottom: 10px;">Generate Riverboat Card</button></span>
-            <span class="visible-button"><button id="Army_Randomize" style="margin-bottom: 10px;">Generate Approaching Army Card</button></span><br>
+            <span class="visible-button"><button id="Mouse_Randomize" style="margin-bottom: 10px;">Mouse</button></span>
+            <span class="visible-button"><button id="Riverboat_Randomize" style="margin-bottom: 10px;">Riverboat</button></span>
+            <span class="visible-button"><button id="Army_Randomize" style="margin-bottom: 10px;">Approaching Army</button></span>
+            <span class="visible-button"><button id="Bane_Randomize" style="margin-bottom: 10px;">Bane</button></span>
+            <span class="visible-button"><button id="Ferryman_Randomize" style="margin-bottom: 10px;">Ferryman</button></span><br>
             </div>
 
         </div>
@@ -286,6 +300,7 @@
     <script src="mouse.js"></script>
     <script src="riverboat.js"></script>
     <script src="army.js"></script>
+    <script src="cornucopia.js"></script>
     <script src="nocturne.js"></script>
 </body>
 
