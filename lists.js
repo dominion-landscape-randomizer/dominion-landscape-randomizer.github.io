@@ -22,7 +22,7 @@ class cardShapedThing{
 }
 
 const types = ['Event','Landmark','Project','Way','Trait']
-const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check']
+const checks = ['victory_check', 'adventures_token_check', 'debt_check', 'coffer_check', 'exile_check', 'horse_check', 'liaison_check', 'loot_check','av_check','em_check','mg_check','pl_check','rs_check','pr_check']
 const counters = ['Total_count', 'Event_min', 'Event_max', 'Landmark_min', 'Landmark_max', 'Project_min', 'Project_max', 'Way_min', 'Way_max', 'Trait_min', 'Trait_max', 'Ally_min', 'Ally_max']
 
 //Constant arrays containing objects of each card
