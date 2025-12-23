@@ -178,7 +178,7 @@ function randomCards(n){
     console.log(`i = ${i}`)
 
     //do until n cards have been chosen
-    while (chosen < n && i >= 0){
+    while (chosen <= n && i >= 0){
         //add randomly selected card to table. Replace that card in the array with the end card.
         //Shrink array by 1
         index = Math.floor(Math.random() * (i + 1))
@@ -404,8 +404,16 @@ function readStorage(){
         if (localStorage.getItem(checks[item]) === "true"){
             document.getElementById(checks[item]).checked = true
         }
-        else{
+        else if (localStorage.getItem(checks[item]) === "false"){
             document.getElementById(checks[item]).checked = false
+        }
+        else{
+            if (checks[item] === "horse_check" || checks[item] === "loot_check" || checks[item] === "liaison_check"){
+                document.getElementById(checks[item]).checked = false
+            }
+            else{
+                document.getElementById(checks[item]).checked = true
+            }
         }
     }
 }
