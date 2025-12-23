@@ -4,7 +4,7 @@ var armyCards = []
 function addArmy() {
     //display Approaching Army in Prophecies
     let prop = document.getElementById('prophecy_tbl')
-    addRow("Approaching_Army", prop, 0, 320)
+    addRow("approachingarmy", prop, 0, 320)
     showCards()
     document.getElementById("army_parent").style.display = "block"
 }

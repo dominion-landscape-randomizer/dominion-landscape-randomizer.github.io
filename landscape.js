@@ -20,24 +20,23 @@ var cards = []
 var cardsToAdd = []
 
 function addRow(imageURL, table, index, width) {
+    console.log("Adding a row")
     //creates a row if it does not already exist, or index is specifically the end
     if (table.rows.length <= index || index === -1){
-        let contentrow = document.createElement('tr')
+        let contentrow = table.insertRow(-1)
         let imageElement = document.createElement('img')
         contentrow.appendChild(imageElement)
-        imageElement.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`
+        imageElement.src = `img/${imageURL}.jpg`   
         imageElement.width = width
-        
-        table.appendChild(contentrow)        
     }
     //overwrites a row if it already exists
     else{
         //preload the image before changing
         const preloadedImage = new Image()
-        preloadedImage.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`
+        preloadedImage.src =`img/${imageURL}.jpg`   
         preloadedImage.onload = function(){
             var image = table.rows[index].children[0]
-            image.src = `https://wiki.dominionstrategy.com/index.php/Special:Redirect/file/${imageURL}.jpg`          
+            image.src = `img/${imageURL}.jpg`           
             }
         }
 }
@@ -73,6 +72,7 @@ function randomize(){
         i++
     }
     let total = parseInt(document.getElementById("Total_count").value)
+    console.log(total)
     //makes deck of all the types that are included 
     makeList(included,total)
 }
@@ -174,12 +174,14 @@ function randomCards(n){
     i = cards.length - 1 
     if (n > cards.length) n = cards.length
     cardsToAdd = []
+    console.log(`n = ${n}`)
+    console.log(`i = ${i}`)
 
     //do until n cards have been chosen
     while (chosen < n && i >= 0){
         //add randomly selected card to table. Replace that card in the array with the end card.
         //Shrink array by 1
-        index = Math.floor(Math.random() * i)
+        index = Math.floor(Math.random() * (i + 1))
         //if card is not required, check if there is space for it
         if (required[cards[index].getType()] === 0){
             //if there is no space for it, do not add it to the table
@@ -194,22 +196,22 @@ function randomCards(n){
         if (required[cards[index].getType()] > 0) required[cards[index].getType()]--
         if (allowed[cards[index].getType()] > 0) allowed[cards[index].getType()]--
         //display the trait selector if the card is a trait or Obelisk
-        if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "Obelisk")){
+        if (cards[index].getType() === cardType.TRAIT || (cards[index].getType() === cardType.LANDMARK && cards[index].getURL() === "obelisk")){
             showTrait()
         }
         //displays the mouse randomizer if the card is Way of the Mouse
-        else if (cards[index].getURL() === "Way_of_the_Mouse"){
+        else if (cards[index].getURL() === "wayofthemouse"){
             showCards()
         }
         cardsToAdd.push(cards[index])
         chosen++
         cards[index] = cards[i]
         i--
+        console.log(`chosen = ${chosen}, i = ${i}, n = ${n}`)
     }
 
     //replaces old table with new
     let table = document.getElementById('card_tbl')
-    let tableSize = table.rows.length
 
     //adds all chosen cards to the table
     i = 0
@@ -218,10 +220,8 @@ function randomCards(n){
         i++
     }
     //if more cards are in the table than were chosen
-    if (tableSize > chosen)
-    while (i < tableSize){
-        table.deleteRow(i)
-        i++
+    while (table.rows.length > chosen){
+        table.deleteRow(-1)
     }
     table.style.display = "block";
 }

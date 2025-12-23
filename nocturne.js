@@ -37,61 +37,61 @@ function showHex() {
 function isNocturne(imageURL) {
     hex = false;
     switch (imageURL) {
-        case "Druid":
+        case "druid":
             threeButton = document.getElementById("3_Boons");
             threeButton.innerHTML = "3 New Boons"
             threeButton.style.display = "inline"
             showBoon()
             receiveBoons(3, 0)
             break;
-        case "Tracker":
+        case "tracker":
             boonButton = document.getElementById("1_Boon");
             boonButton.style.display = "inline"
             showBoon()
-            addRow("Pouch", document.getElementById("mouse_heirloom_tbl"), 0, 200)
+            addRow("pouch", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("mouse_rules_clarification").innerHTML = "All players start with a Pouch instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             break;
-        case "Fool":
+        case "fool":
             threeButton = document.getElementById("3_Boons");
             threeButton.innerHTML = "Receive 3 Boons"
             threeButton.style.display = "inline"
             boonButton = document.getElementById("1_Boon");
             boonButton.style.display = "inline"
             showBoon()
-            addRow("Lost_in_the_Woods", document.getElementById("state_tbl_b"), 0, 320)
-            addRow("Lucky_Coin", document.getElementById("mouse_heirloom_tbl"), 0, 200)
+            addRow("lostinthewoods", document.getElementById("state_tbl_b"), 0, 320)
+            addRow("luckycoin", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("mouse_rules_clarification").innerHTML = "All players start with a Lucky Coin instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             break;
-        case "Leprechaun":
+        case "leprechaun":
             hexButton = document.getElementById("Hex");
             hexButton.style.display = "inline"
             showHex()
             document.getElementById("hex_count").innerHTML = "Hexes left in deck: 12"
-            addRow("Wish", document.getElementById("mouse_heirloom_tbl"), 0, 200)
+            addRow("wish", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             break;
-        case "Pixie":
-            addRow("Goat", document.getElementById("mouse_heirloom_tbl"), 0, 200)
+        case "pixie":
+            addRow("goat", document.getElementById("mouse_heirloom_tbl"), 0, 200)
             document.getElementById("mouse_rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Pixie, therefore it cannot receive Boons.<br>All players start with a Goat instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             //hideboons
             break;
-        case "Secret_Cave":
+        case "secretcave":
             let heirloomTable = document.getElementById("mouse_heirloom_tbl")
-            addRow("Magic_Lamp", heirloomTable, 0, 200)
-            addRow("Wish", heirloomTable, 1, 200)
+            addRow("magiclamp", heirloomTable, 0, 200)
+            addRow("wish", heirloomTable, 1, 200)
             document.getElementById("mouse_rules_clarification").innerHTML = "All players start with a Magic Lamp instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it, and use blank cards for Wishes (the Wish pile has 12 cards)."
             break;
-        case "Pooka":
-            addRow("Cursed_Gold", document.getElementById("riverboat_heirloom_tbl"), 0, 200)
+        case "pooka":
+            addRow("cursedgold", document.getElementById("riverboat_heirloom_tbl"), 0, 200)
             document.getElementById("riverboat_rules_clarification").innerHTML = "All players start with a Cursed Gold instead of one starting copper. If you don't have Nocturne, you can use some other card to represent it."
             break;
-        case "Tormentor":
+        case "tormentor":
             document.getElementById("riverboat_rules_clarification").innerHTML = "Riverboat is in play, therefore no Imps can be gained."
             hexButton = document.getElementById("Hex");
             hexButton.style.display = "inline"
             showHex()
             document.getElementById("hex_count").innerHTML = "Hexes left in deck: 12"
             break;
-        case "Sacred_Grove":
+        case "sacredgrove":
             boonButton = document.getElementById("1_Boon");
             boonButton.style.display = "inline"
             showBoon()
@@ -124,8 +124,8 @@ function receiveBoons(n, i){
     document.getElementById("boon_count").innerHTML = "Boons left in deck: " + numBoons
     //display Will-o'-Wisp if relevant Boon revealed. Will stay out unless a new action card is chosen
     //(So that players can see the instructions for the rest of the game)
-    if (boonsDeck[numBoons] === "The_Swamp%27s_Gift"){
-        addRow("Will-o'-Wisp", document.getElementById("mouse_heirloom_tbl"), 1, 200)
+    if (boonsDeck[numBoons] === "theswampsgift"){
+        addRow("willowisp", document.getElementById("mouse_heirloom_tbl"), 1, 200)
     }
 
     addRow(boonsDeck[numBoons], document.getElementById("boon_tbl"), i, 320)
@@ -145,12 +145,12 @@ function receiveHex(){
     //display state relevant to Hex that was just received.
     //Will stay out unless a new action card is chosen
     if (state_table.rows.length < 4){
-        if (hexDeck[numHexes] == "Misery") {
-            addRow("Miserable", state_table, -1, 320)
-            addRow("Twice_Miserable", state_table, -1, 320)
+        if (hexDeck[numHexes] == "misery") {
+            addRow("miserable", state_table, -1, 320)
+            addRow("twicemiserable", state_table, -1, 320)
         }
-        else if (hexDeck[numHexes] == "Delusion") addRow("Deluded", state_table, -1, 320)
-        else if (hexDeck[numHexes] == "Envy") addRow("Envious", state_table, -1, 320)    
+        else if (hexDeck[numHexes] == "delusion") addRow("deluded", state_table, -1, 320)
+        else if (hexDeck[numHexes] == "envy") addRow("envious", state_table, -1, 320)    
     }
 
     addRow(hexDeck[numHexes], document.getElementById("hex_tbl"), 0, 320)

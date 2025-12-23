@@ -4,14 +4,14 @@ var mouseActionCards = []
 function addMouse() {
     //check if mouse is already there
     for (c in cardsToAdd) {
-        if (cardsToAdd[c].getURL() === "Way_of_the_Mouse") {
+        if (cardsToAdd[c].getURL() === "wayofthemouse") {
             return;
         }
     }
     //if not, add it to the end
     let table = document.getElementById('card_tbl')
-    addRow("Way_of_the_Mouse", table, cardsToAdd.length, 320)
-    cardsToAdd.push(new cardShapedThing("Way_of_the_Mouse", cardType.WAY))
+    addRow("wayofthemouse", table, cardsToAdd.length, 320)
+    cardsToAdd.push(new cardShapedThing("wayofthemouse", cardType.WAY))
     showCards()
     document.getElementById("mouse_parent").style.display = "block"
 }
@@ -125,9 +125,10 @@ function isLiaisonMouse(imageURL) {
     for (i in AlliesLiaison_Mouse) {
         if (imageURL === AlliesLiaison_Mouse[i]) {
             //add message
-            if (imageURL === "Student"){ //Ally is Student
+            if (imageURL === "student"){ //Ally is Student
                 document.getElementById("mouse_rules_clarification").innerHTML = `As a Liaison is present, all players start the game with 1 Favor Token.
-                If you do not already have an Ally out, press the Ally button below to add one. You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside Student`
+                If you do not already have an Ally out, press the Ally button below to add one.
+                You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside Student`
                 return;
             }
             else{
@@ -138,7 +139,7 @@ function isLiaisonMouse(imageURL) {
         }
     }
     //only reached if the card is not a Liaison
-    if (imageURL === "Merchant_Camp" || imageURL === "Tent"){
+    if (imageURL === "merchantcamp" || imageURL === "tent"){
         document.getElementById("mouse_rules_clarification").innerHTML = "You do not topdeck the card you played as Way of the Mouse. Command variants fail to move the set-aside card"
     }
 }
@@ -160,44 +161,47 @@ function mouseChooseAction() {
     }
 
     if (document.getElementById("renaissance_check").checked) {
-        if (imageURL === "Border_Guard") {
-            addRow("Lantern", document.getElementById("mouse_artifact_tbl"), 0, 320)
+        if (imageURL === "borderguard") {
+            addRow("lantern", document.getElementById("mouse_artifact_tbl"), 0, 320)
             document.getElementById("mouse_rules_clarification").innerHTML = "The Horn is not shown, as it has no effect if a Command variant (like Mouse) plays Border Guard"
+        }
+        else if (imageURL === "experiment") {
+            document.getElementById("mouse_rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Experiment, so nothing is returned to its pile."
         }
     }
 
     if (document.getElementById("dark_ages_check").checked) {
-        if (imageURL === "Hermit") {
+        if (imageURL === "hermit") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts Hermit in play, it is never discarded from play, and thus cannot gain a Madman"
         }
-        else if (imageURL === "Urchin") {
+        else if (imageURL === "urchin") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts Urchin in play, it cannot gain a Mercenary"
         }
     }
     
     if (document.getElementById("adventures_check").checked) {
-        if (imageURL === "Page" || imageURL === "Peasant") {
+        if (imageURL === "page" || imageURL === "peasant") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse never puts the Traveller into play, it is never discarded from play, and thus cannot be exchanged"
         }
     }
 
     if (document.getElementById("1E_check").checked) {
-        if (imageURL === "Embargo") {
+        if (imageURL === "embargo") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Way of the Mouse cannot trash the set-aside Embargo, therefore it cannot distribute tokens."
         }
     }
    
     if (document.getElementById("adventures_check").checked) {
-        if (imageURL === "Ratcatcher" || imageURL === "Guide") {
+        if (imageURL === "ratcatcher" || imageURL === "guide") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As Way of the Mouse says \"leaving it there\", the Reserve card is never put on the Tavern Mat"
         }
     }
     
     if (document.getElementById("empires_check").checked) {
-        if (imageURL === "Farmers%27_Market") {
+        if (imageURL === "farmersmarket") {
             document.getElementById("mouse_rules_clarification").innerHTML = "As there is no Farmer's Market pile, Way of the Mouse only give you +Buy."
         }
-        else if (imageURL === "Encampment") {
+        else if (imageURL === "encampment") {
             document.getElementById("mouse_rules_clarification").innerHTML = "Command variants like Way of the Mouse do not move the Encampment, so nothing is set aside and returned to its pile."
         }
     }

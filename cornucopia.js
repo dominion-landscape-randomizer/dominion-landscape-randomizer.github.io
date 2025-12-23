@@ -5,7 +5,7 @@ var ferrymanCards = []
 function addBane() {
     //display young witch in its spot
     let rbt = document.getElementById("yw_self_tbl")
-    addRow("Young Witch", rbt, 1, 200)
+    addRow("youngwitch", rbt, 1, 200)
     showCards()
     document.getElementById("bane_parent").style.display = "block"
 }
@@ -104,7 +104,7 @@ function baneChooseAction() {
 function addFerryman() {
     //display Ferryman in its spot
     let rbt = document.getElementById("ferryman_self_tbl")
-    addRow("Ferryman", rbt, 0, 200)
+    addRow("ferryman", rbt, 0, 200)
     showCards()
     document.getElementById("ferryman_parent").style.display = "block"
 }
