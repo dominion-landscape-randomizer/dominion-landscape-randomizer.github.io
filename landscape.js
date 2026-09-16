@@ -96,10 +96,10 @@ function makeList(type,n){
     if (type.includes('Project')){
         //disambiguate the Project source: Arcana vs Renaissance
         if (document.getElementById("ar_check").checked){
-            cards = cards.concat(projectsArcana)
+            cards = cards.concat(arProjectsDefault)
         }
-        else if (document.getElementById("re_check").checked){
-            cards = cards.concat(projectsDefault)
+        if (document.getElementById("re_check").checked){
+            cards = cards.concat(reProjectsDefault)
             if (document.getElementById("coffer_check").checked){
                 cards = cards.concat(projectsCoffers)
             }
