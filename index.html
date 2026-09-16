@@ -83,90 +83,27 @@
                 </div>
             </div>
             <div class="expansion-buttons">
-                <table id="expansion_tbl">
-                    <tr>
-                        <td>
-                            <input type="checkbox" , id='base_check'></input>
-                            <label for="base_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='intrigue_check'></input>
-                            <label for="intrigue_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='seaside_check'></input>
-                            <label for="seaside_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='alchemy_check'></input>
-                            <label for="alchemy_check"></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" , id='prosperity_check'></input>
-                            <label for="prosperity_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='cornucopia_check'></input>
-                            <label for="cornucopia_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='hinterlands_check'></input>
-                            <label for="hinterlands_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='dark_ages_check'></input>
-                            <label for="dark_ages_check"></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" , id='guilds_check'></input>
-                            <label for="guilds_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='adventures_check'></input>
-                            <label for="adventures_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='empires_check'></input>
-                            <label for="empires_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='nocturne_check'></input>
-                            <label for="nocturne_check"></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" , id='renaissance_check'></input>
-                            <label for="renaissance_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='menagerie_check'></input>
-                            <label for="menagerie_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='allies_check'></input>
-                            <label for="allies_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='plunder_check'></input>
-                            <label for="plunder_check"></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" , id='rising_sun_check'></input>
-                            <label for="rising_sun_check"></label>
-                        </td>
-                        <td>
-                            <input type="checkbox" , id='promo_check'></input>
-                            <label for="promo_check"></label>
-                        </td>
-                    </tr>
-                </table>
+                                <div class="exp-grid" id="expansion_tbl">
+                    <label class="exp-toggle"><input type="checkbox" id="base_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="intrigue_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="seaside_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="alchemy_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="prosperity_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="cornucopia_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="hinterlands_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="dark_ages_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="guilds_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="adventures_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="empires_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="nocturne_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="menagerie_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="allies_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="plunder_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="renaissance_check" checked><span class="exp-ico"></span></label>
+                                                                                <label class="exp-toggle"><input type="checkbox" id="rising_sun_check" checked><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="arcana_check"><span class="exp-ico"></span></label>
+                    <label class="exp-toggle"><input type="checkbox" id="promo_check" checked><span class="exp-ico"></span></label>
+                </div>
             <span class="visible-button"><button id="Expansion_Select" style="margin-bottom: 10px;">Select All Expansions</button></span><br>
             <input type="checkbox" , id='1E_check'></input> Include removed 1E cards<br>
             <span class="visible-button"><button id="Mouse_Randomize" style="margin-bottom: 10px;">Mouse</button></span>
@@ -200,76 +137,94 @@
                 style="margin-bottom: 10px;">⬇️</button><input type="number" , value='2' , min='0' ,
                 id='Total_count'><button id="Total_up_button" style="margin-bottom: 10px;">⬆️</button></div><br>
         <span class="visible-button"><button id="submit_button" style="margin-bottom: 10px;">Generate Landscapes</button></span>
-        <div class="type-select">
+                <div class="type-select">
             <table>
+                <tr>
+                    <td colspan="2">
+                        <p><b>Events &amp; Projects Expansions</b></p>
+                        <div class="exp-grid" id="events_checkboxes">
+                            <label class="exp-toggle"><input type="checkbox" id="av_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="em_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="mg_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="pl_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="rs_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="re_check" checked><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="ar_check"><span class="exp-ico"></span></label>
+                            <label class="exp-toggle"><input type="checkbox" id="pr_check" checked><span class="exp-ico"></span></label>
+                        </div>
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <p><b>Events</b></p>
                         Minimum: <div class="button-group"><button id="Event_min_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
-                                id='Event_min'><button id="Event_min_up_button" style="margin-bottom: 10px;">⬆️</button>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Event_min'><button id="Event_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
                         </div><br>
                         Maximum: <div class="button-group"><button id="Event_max_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
-                                id='Event_max'><button id="Event_max_up_button" style="margin-bottom: 10px;">⬆️</button>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Event_max'><button id="Event_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
                         </div>
                     </td>
                     <td>
-                        <p><b>Events Expansions</b></p>
-                        <input type="checkbox" , id='av_check' checked></input> <label for="adventures_check"></label>
-                        <input type="checkbox" , id='em_check' checked></input> <label for="empires_check"></label>
-                        <input type="checkbox" , id='mg_check' checked></input> <label for="menagerie_check"></label><br>
-                        <input type="checkbox" , id='pl_check' checked></input> <label for="plunder_check"></label>
-                        <input type="checkbox" , id='rs_check' checked></input> <label for="rising_sun_check"></label>
-                        <input type="checkbox" , id='pr_check' checked></input> <label for="promo_check"></label><br>
+                        <p><b>Projects</b></p>
+                        Minimum: <div class="button-group"><button id="Project_min_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Project_min'><button id="Project_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div><br>
+                        Maximum: <div class="button-group"><button id="Project_max_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Project_max'><button id="Project_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <p><b>Landmarks</b></p>
                         Minimum: <div class="button-group"><button id="Landmark_min_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Landmark_min'><button id="Landmark_min_up_button"
-                                style="margin-bottom: 10px;">⬆️</button></div><br>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Landmark_min'><button id="Landmark_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div><br>
                         Maximum: <div class="button-group"><button id="Landmark_max_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
-                                id='Landmark_max'><button id="Landmark_max_up_button"
-                                style="margin-bottom: 10px;">⬆️</button></div>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Landmark_max'><button id="Landmark_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div>
                     </td>
-                    <td>
-                        <p><b>Projects</b></p>
-                        Minimum: <div class="button-group"><button id="Project_min_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Project_min'><button id="Project_min_up_button"
-                                style="margin-bottom: 10px;">⬆️</button></div><br>
-                        Maximum: <div class="button-group"><button id="Project_max_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='1' , min='0' ,
-                                id='Project_max'><button id="Project_max_up_button"
-                                style="margin-bottom: 10px;">⬆️</button></div>
-                    </td>
-                </tr>
-                <td>
-                    <p><b>Traits</b></p>
-                    Minimum: <div class="button-group"><button id="Trait_min_down_button"
-                            style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                            id='Trait_min'><button id="Trait_min_up_button" style="margin-bottom: 10px;">⬆️</button>
-                    </div><br>
-                    Maximum: <div class="button-group"><button id="Trait_max_down_button"
-                            style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                            id='Trait_max'><button id="Trait_max_up_button" style="margin-bottom: 10px;">⬆️</button>
-                    </div>
                     <td>
                         <p><b>Ways</b></p>
                         Minimum: <div class="button-group"><button id="Way_min_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Way_min'><button id="Way_min_up_button" style="margin-bottom: 10px;">⬆️</button>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Way_min'><button id="Way_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
                         </div><br>
                         Maximum: <div class="button-group"><button id="Way_max_down_button"
-                                style="margin-bottom: 10px;">⬇️</button><input type="number" , value='0' , min='0' ,
-                                id='Way_max'><button id="Way_max_up_button" style="margin-bottom: 10px;">⬆️</button>
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Way_max'><button id="Way_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
                         </div>
                     </td>
-                </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p><b>Traits</b></p>
+                        Minimum: <div class="button-group"><button id="Trait_min_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Trait_min'><button id="Trait_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div><br>
+                        Maximum: <div class="button-group"><button id="Trait_max_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Trait_max'><button id="Trait_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div>
+                    </td>
+                    <td>
+                        <p><b>Studies</b></p>
+                        Minimum: <div class="button-group"><button id="Study_min_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Study_min'><button id="Study_min_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div><br>
+                        Maximum: <div class="button-group"><button id="Study_max_down_button"
+                                style="margin-bottom: 10px;">&#11015;&#65039;</button><input type="number" , value='0' , min='0' ,
+                                id='Study_max'><button id="Study_max_up_button" style="margin-bottom: 10px;">&#11014;&#65039;</button>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>

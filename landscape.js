@@ -1,18 +1,20 @@
 //the number of cards of each type that must be included
-var required = 
+var required =
 {Event:0,
 Landmark: 0,
 Project: 0,
 Way: 0,
-Trait: 0}
+Trait: 0,
+Study: 0}
 
 //the number of cards of each type that can be included
-var allowed = 
+var allowed =
 {Event:0,
 Landmark: 0,
 Project: 0,
 Way: 0,
-Trait: 0}
+Trait: 0,
+Study: 0}
 
 //the list of all cards
 var cards = []
@@ -92,11 +94,18 @@ function makeList(type,n){
         }
     }
     if (type.includes('Project')){
-        cards = cards.concat(projectsDefault)
-        if (document.getElementById("coffer_check").checked){
-            cards = cards.concat(projectsCoffers)
+        //disambiguate the Project source: Arcana vs Renaissance
+        if (document.getElementById("ar_check").checked){
+            cards = cards.concat(projectsArcana)
+        }
+        else if (document.getElementById("re_check").checked){
+            cards = cards.concat(projectsDefault)
+            if (document.getElementById("coffer_check").checked){
+                cards = cards.concat(projectsCoffers)
+            }
         }
     }
+    //Studies: placeholder until Arcana is released (add studiesDefault here)
     if (type.includes('Landmark')){
         cards = cards.concat(landmarksDefault)
         if (document.getElementById("victory_check").checked){
@@ -388,6 +397,27 @@ function connectButtons(){
         let n = parseInt(document.getElementById("Trait_max").value)
         document.getElementById("Trait_max").value = n+1
         localStorage.setItem('Trait_max', n+1)
+    }) 
+
+    document.getElementById("Study_min_down_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Study_min").value)
+        document.getElementById("Study_min").value = Math.max(n-1, 0)
+        localStorage.setItem('Study_min', Math.max(n-1, 0))
+    })
+    document.getElementById("Study_min_up_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Study_min").value)
+        document.getElementById("Study_min").value = n+1
+        localStorage.setItem('Study_min', n+1)
+    }) 
+    document.getElementById("Study_max_down_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Study_max").value)
+        document.getElementById("Study_max").value = Math.max(n-1, 0)
+        localStorage.setItem('Study_max', Math.max(n-1, 0))
+    })
+    document.getElementById("Study_max_up_button").addEventListener('click', function() {
+        let n = parseInt(document.getElementById("Study_max").value)
+        document.getElementById("Study_max").value = n+1
+        localStorage.setItem('Study_max', n+1)
     }) 
 }
 

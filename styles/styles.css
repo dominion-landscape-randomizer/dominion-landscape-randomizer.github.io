@@ -157,117 +157,109 @@ textarea {
     font-size:medium;
 }
 
+/* Landscape-type selector grid: keep both columns equal width so the
+   left/right boxes line up, on desktop and narrow mobile alike */
+.type-select table {
+    width: 100%;
+    table-layout: fixed;
+}
+.type-select td {
+    width: 50%;
+    box-sizing: border-box;
+}
+.type-select p {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
 .visible-button{
     background-color: white;
     outline:white;
     border:black;    
 }
 
-label[for="base_check"] {
-    display: inline-block;
+/* Expansion & Events-expansion icon toggles ---------------------------- */
+.exp-grid {
+    display: grid;
+    /* 3 even columns by default; each column takes one third of the row
+       minus the gap, so rows never end up with a single wide icon */
+    grid-template-columns: repeat(3, 1fr);
+    align-content: start;
+    gap: 8px;
+    max-width: 250px;           /* cap width so 3 icons fit comfortably */
+}
+
+.exp-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;                /* fill the grid cell */
+    min-width: 0;
+    cursor: pointer;
+}
+
+/* hide the native checkbox; the visible icon acts as the toggle */
+.exp-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    /* allow clicks on the label to fall through to the checkbox */
+    pointer-events: auto;
+}
+
+/* the visible icon */
+.exp-ico {
     width: 70px;
     height: 70px;
-    background-image: url("../img/expansions/baseset.png");
+    max-width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
-label[for="intrigue_check"] {
-    display: inline-block;
-    width: 70px;
-    height: 74px;
-    background-image: url("../img/expansions/intrigue.png");
+
+/* checked = full opacity ; unchecked = dimmed */
+.exp-toggle input:checked + .exp-ico {
+    opacity: 1;
 }
-label[for="seaside_check"] {
-    display: inline-block;
-    width: 49px;
-    height: 58px;
-    background-image: url("../img/expansions/seaside.png");
+.exp-toggle input:not(:checked) + .exp-ico {
+    opacity: 0.30;
 }
-label[for="alchemy_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 109px;
-    background-image: url("../img/expansions/alchemy.png");
-}
-label[for="prosperity_check"] {
-    display: inline-block;
-    width: 52px;
-    height: 55px;
-    background-image: url("../img/expansions/prosperity.png");
-}
-label[for="cornucopia_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 72px;
-    background-image: url("../img/expansions/cornucopia.png");
-}
-label[for="hinterlands_check"] {
-    display: inline-block;
-    width: 55px;
-    height: 40px;
-    background-image: url("../img/expansions/hinterlands.png");
-}
-label[for="dark_ages_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 82px;
-    background-image: url("../img/expansions/darkages.png");
-}
-label[for="guilds_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 82px;
-    background-image: url("../img/expansions/guilds.png");
-}
-label[for="adventures_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 78px;
-    background-image: url("../img/expansions/adventures.png");
-}
-label[for="empires_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 67px;
-    background-image: url("../img/expansions/empires.png");
-}
-label[for="nocturne_check"] {
-    display: inline-block;
-    width: 58px;
-    height: 70px;
-    background-image: url("../img/expansions/nocturne.png");
-}
-label[for="renaissance_check"] {
-    display: inline-block;
-    width: 70px;
-    height: 65px;
-    background-image: url("../img/expansions/renaissance.png");
-}
-label[for="menagerie_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 75px;
-    background-image: url("../img/expansions/menagerie.png");
-}
-label[for="allies_check"] {
-    display: inline-block;
-    width: 58px;
-    height: 62px;
-    background-image: url("../img/expansions/allies.png");
-}
-label[for="plunder_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 75px;
-    background-image: url("../img/expansions/plunder.png");
-}
-label[for="rising_sun_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 68px;
-    background-image: url("../img/expansions/risingsun.png");
-}
-label[for="promo_check"] {
-    display: inline-block;
-    width: 68px;
-    height: 69px;
-    background-image: url("../img/expansions/promos.png");
+
+/* per-expansion icons and artwork proportions (re-using the original sizes) */
+#base_check + .exp-ico { background-image: url("../img/expansions/baseset.png"); width: 70px; height: 70px; }
+#intrigue_check + .exp-ico { background-image: url("../img/expansions/intrigue.png"); width: 70px; height: 74px; }
+#seaside_check + .exp-ico { background-image: url("../img/expansions/seaside.png"); width: 49px; height: 58px; }
+#alchemy_check + .exp-ico { background-image: url("../img/expansions/alchemy.png"); width: 68px; height: 109px; }
+#prosperity_check + .exp-ico { background-image: url("../img/expansions/prosperity.png"); width: 52px; height: 55px; }
+#cornucopia_check + .exp-ico { background-image: url("../img/expansions/cornucopia.png"); width: 68px; height: 72px; }
+#hinterlands_check + .exp-ico { background-image: url("../img/expansions/hinterlands.png"); width: 55px; height: 40px; }
+#dark_ages_check + .exp-ico { background-image: url("../img/expansions/darkages.png"); width: 68px; height: 82px; }
+#guilds_check + .exp-ico { background-image: url("../img/expansions/guilds.png"); width: 68px; height: 82px; }
+#adventures_check + .exp-ico { background-image: url("../img/expansions/adventures.png"); width: 68px; height: 78px; }
+#empires_check + .exp-ico { background-image: url("../img/expansions/empires.png"); width: 68px; height: 67px; }
+#nocturne_check + .exp-ico { background-image: url("../img/expansions/nocturne.png"); width: 58px; height: 70px; }
+#renaissance_check + .exp-ico { background-image: url("../img/expansions/renaissance.png"); width: 70px; height: 65px; }
+#menagerie_check + .exp-ico { background-image: url("../img/expansions/menagerie.png"); width: 68px; height: 75px; }
+#allies_check + .exp-ico { background-image: url("../img/expansions/allies.png"); width: 58px; height: 62px; }
+#plunder_check + .exp-ico { background-image: url("../img/expansions/plunder.png"); width: 68px; height: 75px; }
+#rising_sun_check + .exp-ico { background-image: url("../img/expansions/risingsun.png"); width: 68px; height: 68px; }
+#arcana_check + .exp-ico { background-image: url("../img/expansions/promos.png"); width: 68px; height: 69px; } /* placeholder until Arcana art exists */
+#promo_check + .exp-ico { background-image: url("../img/expansions/promos.png"); width: 68px; height: 69px; }
+
+/* Events-Expansions section reuses the expansion artwork */
+#av_check + .exp-ico { background-image: url("../img/expansions/adventures.png"); width: 68px; height: 78px; }
+#em_check + .exp-ico { background-image: url("../img/expansions/empires.png"); width: 68px; height: 67px; }
+#mg_check + .exp-ico { background-image: url("../img/expansions/menagerie.png"); width: 68px; height: 75px; }
+#pl_check + .exp-ico { background-image: url("../img/expansions/plunder.png"); width: 68px; height: 75px; }
+#rs_check + .exp-ico { background-image: url("../img/expansions/risingsun.png"); width: 68px; height: 68px; }
+#re_check + .exp-ico { background-image: url("../img/expansions/renaissance.png"); width: 70px; height: 65px; }
+#ar_check + .exp-ico { background-image: url("../img/expansions/promos.png"); width: 68px; height: 69px; }
+#pr_check + .exp-ico { background-image: url("../img/expansions/promos.png"); width: 68px; height: 69px; }
+
+/* the Events & Projects grid sits in its own full-width table cell and is a tidy 4x2 */
+#events_checkboxes {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 340px;
 }
