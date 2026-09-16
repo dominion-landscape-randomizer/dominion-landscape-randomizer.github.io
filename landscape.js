@@ -26,17 +26,17 @@ function addRow(imageURL, table, index, width) {
         let contentrow = table.insertRow(-1)
         let imageElement = document.createElement('img')
         contentrow.appendChild(imageElement)
-        imageElement.src = `img/${imageURL}.jpg`   
+        imageElement.src = cardImageURL(imageURL)   
         imageElement.width = width
     }
     //overwrites a row if it already exists
     else{
         //preload the image before changing
         const preloadedImage = new Image()
-        preloadedImage.src =`img/${imageURL}.jpg`   
+        preloadedImage.src = cardImageURL(imageURL)   
         preloadedImage.onload = function(){
             var image = table.rows[index].children[0]
-            image.src = `img/${imageURL}.jpg`           
+            image.src = cardImageURL(imageURL)           
             }
         }
 }

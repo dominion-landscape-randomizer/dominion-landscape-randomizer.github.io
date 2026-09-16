@@ -3,8 +3,8 @@ var boonButton
 var hexButton
 var numBoons = 0
 var numHexes = 0
-var boonsDeck = ["The_Earth%27s_Gift","The_Field%27s_Gift","The_Flame%27s_Gift","The_Forest%27s_Gift","The_Moon%27s_Gift","The_Mountain%27s_Gift","The_River%27s_Gift","The_Sea%27s_Gift","The_Sky%27s_Gift","The_Sun%27s_Gift","The_Swamp%27s_Gift","The_Wind%27s_Gift"]
-var hexDeck = ["Bad_Omens","Delusion","Envy","Famine","Fear","Greed","Haunting","Locusts","Misery","Plague","Poverty","War"]
+var boonsDeck = ["theearthsgift","thefieldsgift","theflamesgift","theforestsgift","themoonsgift","themountainsgift","theriversgift","theseasgift","theskysgift","thesunsgift","theswampsgift","thewindsgift"]
+var hexDeck = ["badomens","delusion","envy","famine","fear","greed","haunting","locusts","misery","plague","poverty","war"]
 
 function hideBoon() {
     document.getElementById("3_Boons").style.display = "none";

@@ -66,9 +66,9 @@ function readCardStorage(){
 function cardImage(imageURL, image_element, width, icon) {
     //preload the image before changing
     const preloadedImage = new Image()
-    preloadedImage.src = `img/${imageURL}.jpg`
+    preloadedImage.src = cardImageURL(imageURL)
     preloadedImage.onload = function(){
-        image_element.src = `img/${imageURL}.jpg`          
+        image_element.src = cardImageURL(imageURL)          
         image_element.width = width   
         icon.style.display = "block"
     }
