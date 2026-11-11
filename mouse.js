@@ -148,7 +148,13 @@ function mouseChooseAction() {
     //randomly choose one card, display it
     document.getElementById("mouse_parent").style.display = "block"
     let index = Math.floor(Math.random() * mouseActionCards.length)
-    let imageURL = mouseActionCards[index]
+    mouseDisplayAction(mouseActionCards[index])
+}
+
+//displays the chosen action card for Way of the Mouse, including its rules
+//clarifications, heirlooms, artifacts and Boons/Hexes. Also used when a card
+//is passed in the URL by the Dominion Randomizer integration
+function mouseDisplayAction(imageURL) {
     cardImage(imageURL, document.getElementById("mouse_card"), 200, document.getElementById("mouse_icon"));
     document.getElementById("mouse_rules_clarification").innerHTML = ``;
 

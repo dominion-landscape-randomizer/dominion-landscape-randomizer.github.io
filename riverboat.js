@@ -135,7 +135,13 @@ function riverboatChooseAction() {
     //randomly choose one card, display it
     document.getElementById("riverboat_parent").style.display = "block"
     let index = Math.floor(Math.random() * riverboatActionCards.length)
-    let imageURL = riverboatActionCards[index]
+    riverboatDisplayAction(riverboatActionCards[index])
+}
+
+//displays the chosen action card for Riverboat, including its rules
+//clarifications, heirlooms and artifacts. Also used when a card is passed in
+//the URL by the Dominion Randomizer integration
+function riverboatDisplayAction(imageURL) {
     cardImage(imageURL, document.getElementById("riverboat_card"), 200, document.getElementById("riverboat_icon"));
     document.getElementById("riverboat_rules_clarification").innerHTML = ``;
 
